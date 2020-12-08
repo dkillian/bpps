@@ -1,0 +1,21 @@
+---
+title: "demographics"
+author: "dkillian"
+date: "2020-12-08"
+output: workflowr::wflow_html
+editor_options:
+  chunk_output_type: console
+---
+
+## Introduction
+
+```{r}
+library(ggplot2)
+
+a <- data.frame(x = rnorm(100, 100, 15))
+
+ggplot(a, aes(x)) + 
+  stat_density(geom="line", size=1, color="dodgerblue") +
+  theme_bw()
+```
+

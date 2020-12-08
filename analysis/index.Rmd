@@ -8,4 +8,13 @@ editor_options:
   chunk_output_type: console
 ---
 
-Welcome to my research website.
+Welcome to this presentation of the USAID Baseline Public Perception Survey. The purpose of this survey was to assess the level of awareness of USAID and USAID activities in Afghanistan, and also to measure citizen perception of USAID.
+
+The following pages explore the data from this survey. 
+
+[Survey management](survey-management.html)
+
+[Demographics](demographics.html)
+
+[Awareness of USAID](module-B.html)
+
