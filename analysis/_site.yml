@@ -1,0 +1,17 @@
+name: "USAID Baseline Public Perception Survey"
+output_dir: ../docs
+navbar:
+  title: "USAID Baseline Public Perception Survey"
+  left:
+  - text: Home
+    href: index.html
+  - text: About
+    href: about.html
+  - text: License
+    href: license.html
+output:
+  workflowr::wflow_html:
+    toc: yes
+    toc_float: yes
+    theme: cosmo
+    highlight: textmate
