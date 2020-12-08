@@ -1,5 +1,5 @@
 name: USAID Baseline Public Perception Survey
-output_dir: ../public
+output_dir: ../docs
 navbar:
   title: USAID Baseline Public Perception Survey
   left:
@@ -10,9 +10,9 @@ navbar:
   - text: License
     href: license.html
   right:
-  - icon: fa-gitlab
+  - icon: fa-github
     text: Source code
-    href: https://gitlab.com/dkillian/bpps
+    href: https://github.com/dkillian/bpps
 output:
   workflowr::wflow_html:
     toc: yes
