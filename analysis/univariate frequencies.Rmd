@@ -1,0 +1,124 @@
+---
+title: "univariate frequencies"
+author: "dkillian"
+date: "2020-12-10"
+output: workflowr::wflow_html
+editor_options:
+  chunk_output_type: console
+---
+
+#####
+
+```{r global_options, include=F, warning=F, message=F, echo=F, error=F}
+
+# standard figure size and generate clean output
+knitr::opts_chunk$set(fig.width=10, fig.height=8, warning=FALSE, message=FALSE, cache=TRUE, error=T, echo=F)
+
+```
+
+```{r}
+source("code/00 BPPS - workflowr prep.R")
+
+yes <- labs$yes_no
+yes
+
+dat <- read_rds("../../BPPS analysis/data/prepared/BPPS prepared.rds")
+
+svydat <- svydesign(data = dat,
+                    ids= ~PSU + A9,
+                    strata = ~strata,
+                    weights = ~Wgt1)
+
+
+svyrdat <- dat %>%
+  as_survey_design(ids= PSU,
+                   strata=strata,
+                   weights=Wgt1)
+```
+
+
+## Introduction
+
+### Module B. Awareness of USAID
+
+#### B1. Are you aware of the United States Agency for International Development (USAID)? 
+
+```{r}
+b1 <- svytable(~B1,
+         design=svydat,
+         Ntotal=T) %>%
+  as.data.frame() %>%
+  mutate(B1 = as.numeric(as.character(B1))) %>%
+  left_join(labs$yes_no, by=c("B1"="yes_no_code")) %>%
+  select(Response, Percent=Freq) %>%
+  gt() %>%
+  fmt_percent(vars(Percent),
+              decimals=1)
+
+
+b1
+
+```
+
+```{r}
+b1_m <- svymean(~aware,
+                na.rm=T,
+                design=svydat) 
+
+b1_m
+
+```
+
+```{r}
+b1_s <- svyrdat %>%
+  group_by(B1) %>%
+  summarise(proportion = survey_mean(),
+            total = survey_total()) %>%
+  as.data.frame() %>%
+  left_join(yes,
+            by=c("B1" = "yes_no_code")) %>%
+  mutate(`Margin of error` = 1.96*proportion_se,
+         Sample=round(total,0)) %>%
+  select(Response, 
+         Percent=proportion,
+         `Margin of error`,
+         Sample)
+
+b1_s
+
+```
+
+```{r}
+
+b1_sgt <- b1_s %>%
+  gt() %>%
+  fmt_percent(vars(Percent, `Margin of error`),
+              decimals=1)
+
+b1_sgt
+
+```
+
+```{r}
+svymean(~aware,
+        na.rm=T,
+        svydat)
+```
+
+```{r}
+
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
