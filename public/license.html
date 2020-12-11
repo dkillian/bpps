@@ -299,13 +299,25 @@ $(document).ready(function () {
   <a href="about.html">About</a>
 </li>
 <li>
+  <a href="methods.html">Methods</a>
+</li>
+<li>
+  <a href="descriptives.html">Descriptive statistics</a>
+</li>
+<li>
+  <a href="explore.html">Exploratory analyses</a>
+</li>
+<li>
+  <a href="models.html">Regression modeling</a>
+</li>
+<li>
   <a href="license.html">License</a>
 </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li>
-  <a href="https://github.com/dkillian/bpps">
-    <span class="fa fa-github"></span>
+  <a href="https://gitlab.com/dkillian/bpps">
+    <span class="fa fa-gitlab"></span>
      
     Source code
   </a>
@@ -344,7 +356,7 @@ $(document).ready(function () {
 <div class="tab-content">
 <div id="summary" class="tab-pane fade in active">
 <p>
-<strong>Last updated:</strong> 2020-12-08
+<strong>Last updated:</strong> 2020-12-11
 </p>
 <p>
 <strong>Checks:</strong> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> 2 <span class="glyphicon glyphicon-exclamation-sign text-danger" aria-hidden="true"></span> 0
@@ -375,22 +387,34 @@ This reproducible <a href="http://rmarkdown.rstudio.com">R Markdown</a> analysis
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomdkillianbppstree59464bd75fe13470f2670e18cd029caf19094cb5targetblank59464bda"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/dkillian/bpps/tree/59464bd75fe13470f2670e18cd029caf19094cb5" target="_blank">59464bd</a> </a>
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgitlabcomdkillianbppstree5a9a5a51db8600b5cc85f3f2249655af214a73f4targetblank5a9a5a5a"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://gitlab.com/dkillian/bpps/tree/5a9a5a51db8600b5cc85f3f2249655af214a73f4" target="_blank">5a9a5a5</a> </a>
 </p>
 </div>
-<div id="strongRepositoryversionstrongahrefhttpsgithubcomdkillianbppstree59464bd75fe13470f2670e18cd029caf19094cb5targetblank59464bda" class="panel-collapse collapse">
+<div id="strongRepositoryversionstrongahrefhttpsgitlabcomdkillianbppstree5a9a5a51db8600b5cc85f3f2249655af214a73f4targetblank5a9a5a5a" class="panel-collapse collapse">
 <div class="panel-body">
 <p>
 Great! You are using Git for version control. Tracking code development and connecting the code version to the results is critical for reproducibility.
 </p>
 <p>
-The results in this page were generated with repository version <a href="https://github.com/dkillian/bpps/tree/59464bd75fe13470f2670e18cd029caf19094cb5" target="_blank">59464bd</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
+The results in this page were generated with repository version <a href="https://gitlab.com/dkillian/bpps/tree/5a9a5a51db8600b5cc85f3f2249655af214a73f4" target="_blank">5a9a5a5</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
 </p>
 <p>
 Note that you need to be careful to ensure that all relevant files for the analysis have been committed to Git prior to generating the results (you can use <code>wflow_publish</code> or <code>wflow_git_commit</code>). workflowr only checks the R Markdown file, but you know if there are other scripts or data files that it depends on. Below is the status of the Git repository when the results were generated:
 </p>
 <pre><code>
-working directory clean
+Ignored files:
+    Ignored:    .Rhistory
+    Ignored:    .Rproj.user/
+    Ignored:    analysis/freq-test_cache/
+    Ignored:    analysis/frequencies_cache/
+    Ignored:    analysis/univariate-frequencies_cache/
+
+Untracked files:
+    Untracked:  univariate-frequencies_cache/
+
+Unstaged changes:
+    Deleted:    analysis/univariate frequencies.Rmd
+
 </code></pre>
 <p>
 Note that any generated files, e.g. HTML, png, CSS, etc., are not included in this status report because it is ok for generated content to have uncommitted changes.
@@ -404,7 +428,7 @@ Note that any generated files, e.g. HTML, png, CSS, etc., are not included in t
 <div id="versions" class="tab-pane fade">
 
 <p>
-These are the previous versions of the repository in which changes were made to the R Markdown (<code>analysis/license.Rmd</code>) and HTML (<code>docs/license.html</code>) files. If you’ve configured a remote Git repository (see <code>?wflow_git_remote</code>), click on the hyperlinks in the table below to view the files as they were in that past version.
+These are the previous versions of the repository in which changes were made to the R Markdown (<code>analysis/license.Rmd</code>) and HTML (<code>public/license.html</code>) files. If you’ve configured a remote Git repository (see <code>?wflow_git_remote</code>), click on the hyperlinks in the table below to view the files as they were in that past version.
 </p>
 <div class="table-responsive">
 <table class="table table-condensed table-hover">
@@ -433,41 +457,7 @@ Message
 html
 </td>
 <td>
-<a href="https://rawcdn.githack.com/dkillian/bpps/b620451ae6cc508af005d8d64bb5c30d9b607465/docs/license.html" target="_blank">b620451</a>
-</td>
-<td>
-dkillian
-</td>
-<td>
-2020-12-08
-</td>
-<td>
-Build site.
-</td>
-</tr>
-<tr>
-<td>
-html
-</td>
-<td>
-<a href="https://rawcdn.githack.com/dkillian/bpps/c5725200fa2c7cee606d6b789afe7c78a4db9ade/docs/license.html" target="_blank">c572520</a>
-</td>
-<td>
-dkillian
-</td>
-<td>
-2020-12-08
-</td>
-<td>
-Host with GitHub.
-</td>
-</tr>
-<tr>
-<td>
-html
-</td>
-<td>
-<a href="https://rawcdn.githack.com/dkillian/bpps/ca8c2a65ebd89923afa1f03c632937e718f2d39c/docs/license.html" target="_blank">ca8c2a6</a>
+<a href="https://glcdn.githack.com/dkillian/bpps/raw/8ed2f03ec83d064d654fa42e81542727152ee016/public/license.html" target="_blank">8ed2f03</a>
 </td>
 <td>
 dkillian
@@ -484,7 +474,24 @@ Host with GitLab.
 html
 </td>
 <td>
-<a href="https://rawcdn.githack.com/dkillian/bpps/a7292d0f5ec82c8d14479866f121ad1cec458f71/docs/license.html" target="_blank">a7292d0</a>
+<a href="https://glcdn.githack.com/dkillian/bpps/raw/c5725200fa2c7cee606d6b789afe7c78a4db9ade/public/license.html" target="_blank">c572520</a>
+</td>
+<td>
+dkillian
+</td>
+<td>
+2020-12-08
+</td>
+<td>
+Host with GitHub.
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://glcdn.githack.com/dkillian/bpps/raw/43055e45c589432b8960fc9d3c210d1b082dd28b/public/license.html" target="_blank">43055e4</a>
 </td>
 <td>
 dkillian
@@ -498,10 +505,27 @@ Build site.
 </tr>
 <tr>
 <td>
+html
+</td>
+<td>
+<a href="https://glcdn.githack.com/dkillian/bpps/raw/ca8c2a65ebd89923afa1f03c632937e718f2d39c/public/license.html" target="_blank">ca8c2a6</a>
+</td>
+<td>
+dkillian
+</td>
+<td>
+2020-12-08
+</td>
+<td>
+Host with GitLab.
+</td>
+</tr>
+<tr>
+<td>
 Rmd
 </td>
 <td>
-<a href="https://github.com/dkillian/bpps/blob/e8e9da96deadbbdd189368e83ec97d6d8254c2a6/analysis/license.Rmd" target="_blank">e8e9da9</a>
+<a href="https://gitlab.com/dkillian/bpps/blob/e8e9da96deadbbdd189368e83ec97d6d8254c2a6/analysis/license.Rmd" target="_blank">e8e9da9</a>
 </td>
 <td>
 dkillian
