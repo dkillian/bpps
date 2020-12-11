@@ -16,7 +16,7 @@ The following pages explore the data from this survey.
 
 [Demographics](demographics.html)
 
-[Frequencies](univariate frequencies.html)
+[Frequencies](frequencies.html)
 
 [Awareness of USAID](module-B.html)
 
