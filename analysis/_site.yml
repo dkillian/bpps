@@ -1,7 +1,7 @@
 name: USAID Baseline Public Perception Survey
 output_dir: ../public
 navbar:
-  title: USAID Baseline\nPublic Perception Survey
+  title: USAID Baseline Public Perception Survey
   left:
   - text: Home
     href: index.html
@@ -13,8 +13,6 @@ navbar:
     href: descriptives.html
   - text: Exploratory analyses
     href: explore.html
-  - text: Regression modeling
-    href: models.html
   - text: License
     href: license.html
   right:
