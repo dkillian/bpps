@@ -54,7 +54,12 @@ base_style <- function(){theme_bw() +
           axis.ticks = element_blank()) 
 }
 
+<<<<<<< HEAD
 path <- "../BPPS analysis/data/BPPS hh instrument pre-codebook.xlsx"
+=======
+#path <- "../../BPPS analysis/data/BPPS hh instrument pre-codebook.xlsx"
+path <- "data/BPPS hh instrument pre-codebook.xlsx"
+>>>>>>> 3580e8afb7db0e9c56e753cca9119fb242066807
 
 labs <- path %>%
   excel_sheets() %>%
@@ -67,7 +72,12 @@ lablist <- names(labs) %>%
 yes <- labs$yes_no
 agree4 <- labs$agree4
 
+<<<<<<< HEAD
 dat <- read_rds("../BPPS analysis/data/prepared/BPPS prepared.rds")
+=======
+#dat <- read_rds("../../BPPS analysis/data/prepared/BPPS prepared.rds")
+dat <- read_rds("data/prepared/BPPS prepared.rds")
+>>>>>>> 3580e8afb7db0e9c56e753cca9119fb242066807
 
 svydat <- svydesign(data = dat,
                     ids= ~PSU + A9,
