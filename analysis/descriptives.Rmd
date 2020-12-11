@@ -13,3 +13,26 @@ editor_options:
 
 ```
 
+The following files explore the survey data. 
+
+[frequencies](frequencies.html)
+
+[Survey management](module-A.html)
+
+[Demographics](demographics.html)
+
+[Awareness of USAID](module-B.html)
+
+[Media](module-C.html)
+
+[Donor activity](module-D.html)
+
+[Governance](module-E.html)
+
+[Corruption](module-F.html)
+
+[Security](module-G.html)
+
+[COVID-19](module-H.html)
+
+[Households](module-I.html)
