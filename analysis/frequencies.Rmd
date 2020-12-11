@@ -105,19 +105,6 @@ b1
 
 ```
 
-```{r}
-b1_m <- svymean(~aware,
-                na.rm=T,
-                design=svydat) 
-
-b1_m
-
-```
-
-```{r}
-kbl(b1_m)
-```
-
 
 ```{r}
 b1_s <- svyrdat %>%
@@ -127,42 +114,24 @@ b1_s <- svyrdat %>%
   as.data.frame() %>%
   left_join(yes,
             by=c("B1" = "yes_no_code")) %>%
-  mutate(Percent=percent(proportion, digits=3),
-         `Margin of error` = percent(1.96*proportion_se, digits=0),
+  mutate(Percent=proportion,
+         `Margin of error` = 1.96*proportion_se,
          Sample=round(total,0)) %>%
   select(Response, 
          Percent,
          `Margin of error`,
-         Sample)
+         Sample) %>%
+  gt() %>%
+  fmt_percent(vars(Percent, `Margin of error`),
+              decimals=1)
 
 b1_s
 
 ```
 
-```{r}
-
-b1_sgt <- b1_s %>%
-  gt() %>%
-  fmt_percent(vars(Percent, `Margin of error`),
-              decimals=1)
-
-b1_sgt
-
-```
-
-```{r}
-svymean(~aware,
-        na.rm=T,
-        svydat)
-```
-
-```{r}
-
-kbl(b1_s)
-
-```
-
 #### B3. Why do you think the United States Government provides this support to the Government of Afghanistan?
+
+##### B3a To help reduce poverty
 
 ```{r}
 b3_a <- svyrdat %>%
