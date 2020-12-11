@@ -19,3 +19,892 @@ ggplot(a, aes(x)) +
   theme_bw()
 ```
 
+#####
+
+```{r global_options, include=F, warning=F, message=F, echo=F, error=F}
+
+# standard figure size and generate clean output
+knitr::opts_chunk$set(fig.width=10, fig.height=8, warning=FALSE, message=FALSE, cache=TRUE, error=T, echo=F)
+
+```
+
+```{r, include=F, warning=F, message=F, echo=F, error=F}
+#source("code/00 BPPS - workflowr prep.R")
+
+packages <- c("arm", "BMA", "brms", "corrplot", "dummies","DescTools", "estimatr","extrafont", "extrafontdb", "janitor", "reshape2","tidyr","broom", "haven", "HH","Hmisc","lubridate","knitr", "margins", "magrittr", "plotrix", "scales","survey", "srvyr", "sysfonts", "foreign","car", "ICC", "PowerUpR", "openxlsx", "ggrepel", "readr", "readxl", "sjmisc", "sjPlot", "sjstats", "sjlabelled", "skimr","labelled", "texreg", "janitor","psych","dplyr", "tidyverse", "bbplot", "viridis", "here", "ggridges", "ggthemes", "DT", "jtools", "huxtable", "stringi", "gghighlight", "plm", "rethinking" , "brms", "rstan", "rstanarm","tidybayes","texreg","gt","gtsummary","huxtable","stargazer", "gsynth", "panelView", "assertr", "pointblank", "validate", "sandwich", "knitr", "kableExtra", "formattable")
+
+lapply(packages, library, character.only=T)
+
+font_add_google("Source Sans Pro", "sans-serif")
+
+options(digits=4, scipen=6)
+
+# set default
+theme_set(theme_bw() + theme(panel.grid.minor.x=element_blank(),
+                             panel.grid.minor.y=element_blank(),
+                             plot.title=element_text(face="bold",size=18, hjust=.5, family = "Source Sans Pro"),
+                             plot.subtitle = element_text(size=16, family="Source Sans Pro"),
+                             plot.caption=element_text(size=12, family="Source Sans Pro"),
+                             axis.title=element_text(size=16, family="Source Sans Pro"),
+                             axis.text=element_text(size=14, family="Source Sans Pro"),    
+                             legend.text=element_text(size=14, family="Source Sans Pro"),
+                             strip.text=element_text(size=14, family="Source Sans Pro"))) 
+
+
+# without border
+base_style <- function(){theme_bw() +
+    theme(panel.grid.minor.x=element_blank(),
+          panel.grid.minor.y=element_blank(),
+          plot.title=element_text(face="bold",size=18, hjust=.5, family = "Source Sans Pro"),
+          plot.subtitle = element_text(size=16, family="Source Sans Pro"),
+          plot.caption=element_text(size=12, family="Source Sans Pro"),
+          axis.title=element_text(size=16, family="Source Sans Pro"),
+          axis.text=element_text(size=14, family="Source Sans Pro"),    
+          legend.text=element_text(size=14, family="Source Sans Pro"),
+          strip.text=element_text(size=14, family="Source Sans Pro"),
+          panel.border=element_blank(),
+          axis.ticks = element_blank()) 
+}
+
+# path <- "../BPPS analysis/data/BPPS hh instrument pre-codebook.xlsx"
+path <- "data/BPPS hh instrument pre-codebook.xlsx"
+
+
+labs <- path %>%
+  excel_sheets() %>%
+  set_names() %>%
+  lapply(function(x) read_xlsx(x, path=path))
+
+lablist <- names(labs) %>%
+  as.data.frame()
+
+yes <- labs$yes_no
+agree4 <- labs$agree4
+
+# dat <- read_rds("../BPPS analysis/data/prepared/BPPS prepared.rds")
+dat <- read_rds("data/prepared/BPPS prepared.rds")
+
+svydat <- svydesign(data = dat,
+                    ids= ~PSU + A9,
+                    strata = ~strata,
+                    weights = ~Wgt1)
+
+
+svyrdat <- dat %>%
+  as_survey_design(ids= PSU,
+                   strata=strata,
+                   weights=Wgt1)
+```
+
+## Module B.Awareness of USAID 
+
+
+
+### B1. Are you aware of the United States Agency for International Development (USAID)? 
+
+```{r}
+b1 <- svyrdat %>%
+  group_by(B1) %>%
+  summarise(proportion = survey_mean(),
+            total = survey_total()) %>%
+  as.data.frame() %>%
+  left_join(yes,
+            by=c("B1" = "yes_no_code")) %>%
+  mutate(Percent=proportion,
+         `Margin of error` = 1.96*proportion_se,
+         Sample=round(total,0)) %>%
+  select(Response, 
+         Percent,
+         `Margin of error`,
+         Sample) %>%
+  gt() %>%
+  fmt_percent(vars(Percent, `Margin of error`),
+              decimals=1)
+
+b1
+
+```
+
+### B2.	What are the main activities of USAID in Afghanistan?  
+
+```{r}
+get_labels(dat$B2c)
+frq(dat$B2a)
+
+
+```
+
+### B3. Why do you think the United States Government provides this support to the Government of Afghanistan?
+
+#### To help reduce poverty
+
+```{r}
+b3_a <- svyrdat %>%
+  group_by(B3a) %>%
+  summarise(proportion = survey_mean(),
+            total = survey_total()) %>%
+  as.data.frame() %>%
+  left_join(agree4,
+            by=c("B3a" = "agree4_code")) %>%
+  mutate(Percent=proportion,
+         `Margin of error` = 1.96*proportion_se,
+         Sample=round(total,0)) %>%
+  select(Response=agree4_lab, 
+         Percent,
+         `Margin of error`,
+         Sample) %>%
+  gt() %>%
+  fmt_percent(vars(Percent, `Margin of error`),
+              decimals=1)
+
+b3_a
+```
+
+#### To strengthen the friendship between the people of the United States and the people of Afghanistan
+
+```{r}
+b3_b <- svyrdat %>%
+  group_by(B3b) %>%
+  summarise(proportion = survey_mean(),
+            total = survey_total()) %>%
+  as.data.frame() %>%
+  left_join(agree4,
+            by=c("B3b" = "agree4_code")) %>%
+  mutate(Percent=proportion,
+         `Margin of error` = 1.96*proportion_se,
+         Sample=round(total,0)) %>%
+  select(Response=agree4_lab, 
+         Percent,
+         `Margin of error`,
+         Sample) %>%
+  gt() %>%
+  fmt_percent(vars(Percent, `Margin of error`),
+              decimals=1) %>%
+  fmt_number(vars(Sample),
+             decimals = 0)
+b3_b
+```
+
+#### To gain access to Afghanistan’s natural resources
+
+```{r}
+b3_c <- svyrdat %>%
+  group_by(B3c) %>%
+  summarise(proportion = survey_mean(),
+            total = survey_total()) %>%
+  as.data.frame() %>%
+  left_join(agree4,
+            by=c("B3c" = "agree4_code")) %>%
+  mutate(Percent=proportion,
+         `Margin of error` = 1.96*proportion_se,
+         Sample=round(total,0)) %>%
+  select(Response=agree4_lab, 
+         Percent,
+         `Margin of error`,
+         Sample) %>%
+  gt() %>%
+  fmt_percent(vars(Percent, `Margin of error`),
+              decimals=1) %>%
+  fmt_number(vars(Sample),
+             decimals = 0)
+b3_c
+```
+
+#### To strengthen the ability of the government of Afghanistan to serve its citizens
+
+```{r}
+b3_d <- svyrdat %>%
+  group_by(B3d) %>%
+  summarise(proportion = survey_mean(),
+            total = survey_total()) %>%
+  as.data.frame() %>%
+  left_join(agree4,
+            by=c("B3d" = "agree4_code")) %>%
+  mutate(Percent=proportion,
+         `Margin of error` = 1.96*proportion_se,
+         Sample=round(total,0)) %>%
+  select(Response=agree4_lab, 
+         Percent,
+         `Margin of error`,
+         Sample) %>%
+  gt() %>%
+  fmt_percent(vars(Percent, `Margin of error`),
+              decimals=1) %>%
+  fmt_number(vars(Sample),
+             decimals = 0)
+b3_d
+```
+
+### B4. Would you say your impression of USAID is positive or negative?
+
+```{r}
+positive <- labs$postive_negative
+
+b4 <- svyrdat %>%
+  group_by(B4) %>%
+  summarise(proportion = survey_mean(),
+            total = survey_total()) %>%
+  as.data.frame() %>%
+  left_join(positive,
+            by=c("B4" = "USAID_impress")) %>%
+  mutate(Percent=proportion,
+         `Margin of error` = 1.96*proportion_se,
+         Sample=round(total,0)) %>%
+  select(Response=positive_negative_lab, 
+         Percent,
+         `Margin of error`,
+         Sample) %>%
+  gt() %>%
+  fmt_percent(vars(Percent, `Margin of error`),
+              decimals=1) %>%
+  fmt_number(vars(Sample),
+             decimals = 0)
+b4
+```
+
+### B5a. Why do you have a negative impression?
+
+```{r}
+reason1 <- get_labels(dat$B5a) %>%
+  as.data.frame() %>%
+  left_join(as.data.frame(frq(dat$B5a)), by=c(.="label")) %>%
+  select(val,".") %>%
+  rename(reason = ".",
+         code = val) 
+
+
+b5.a <- svyrdat %>%
+  group_by(B5a) %>%
+  summarise(proportion = survey_mean(),
+            total = survey_total()) %>%
+  as.data.frame() %>%
+  left_join(reason1,
+            by=c("B5a" = "code")) %>%
+  mutate(Percent=proportion,
+         `Margin of error` = 1.96*proportion_se,
+         Sample=round(total,0)) %>%
+  select(Response=reason, 
+         Percent,
+         `Margin of error`,
+         Sample) %>%
+  gt() %>%
+  fmt_percent(vars(Percent, `Margin of error`),
+              decimals=1) %>%
+  fmt_number(vars(Sample),
+             decimals = 0)
+b5.a
+```
+
+### B5b. Why do you have a positive impression?
+
+```{r}
+reason2 <- get_labels(dat$B5b) %>%
+  as.data.frame() %>%
+  left_join(as.data.frame(frq(dat$B5b)), by=c(.="label")) %>%
+  select(val,".") %>%
+  rename(reason = ".",
+         code = val) 
+
+
+b5.b <- svyrdat %>%
+  group_by(B5b) %>%
+  summarise(proportion = survey_mean(),
+            total = survey_total()) %>%
+  as.data.frame() %>%
+  left_join(reason2,
+            by=c("B5b" = "code")) %>%
+  mutate(Percent=proportion,
+         `Margin of error` = 1.96*proportion_se,
+         Sample=round(total,0)) %>%
+  select(Response=reason, 
+         Percent,
+         `Margin of error`,
+         Sample) %>%
+  gt() %>%
+  fmt_percent(vars(Percent, `Margin of error`),
+              decimals=1) %>%
+  fmt_number(vars(Sample),
+             decimals = 0)
+b5.b
+```
+
+### B6. Compared to one year ago, would you say your impression of USAID has worsened, remained the same, or improved?
+
+```{r}
+improve <- labs$improve
+
+b6 <- svyrdat %>%
+  group_by(B6) %>%
+  summarise(proportion = survey_mean(),
+            total = survey_total()) %>%
+  as.data.frame() %>%
+  left_join(improve,
+            by=c("B6" = "improve_code")) %>%
+  mutate(Percent=proportion,
+         `Margin of error` = 1.96*proportion_se,
+         Sample=round(total,0)) %>%
+  select(Response=improve_lab, 
+         Percent,
+         `Margin of error`,
+         Sample) %>%
+  gt() %>%
+  fmt_percent(vars(Percent, `Margin of error`),
+              decimals=1) %>%
+  fmt_number(vars(Sample),
+             decimals = 0)
+b6
+```
+
+### B7. We’d like to get a sense of your knowledge of the different logos of donor governments and implementing organizations working in Afghanistan. I will show you a logo; please tell me whether you ever recall seeing that logo. 
+
+#### United States Agency for International Development (USAID)
+
+```{r}
+b7a <- svyrdat %>%
+  group_by(B7a) %>%
+  summarise(proportion = survey_mean(),
+            total = survey_total()) %>%
+  as.data.frame() %>%
+  left_join(yes,
+            by=c("B7a" = "yes_no_code")) %>%
+  mutate(Percent=proportion,
+         `Margin of error` = 1.96*proportion_se,
+         Sample=round(total,0)) %>%
+  select(Response=Response, 
+         Percent,
+         `Margin of error`,
+         Sample) %>%
+  gt() %>%
+  fmt_percent(vars(Percent, `Margin of error`),
+              decimals=1) %>%
+  fmt_number(vars(Sample),
+             decimals = 0)
+b7a
+```
+
+#### German Society for International Cooperation (GIZ)
+
+```{r}
+b7b <- svyrdat %>%
+  group_by(B7b) %>%
+  summarise(proportion = survey_mean(),
+            total = survey_total()) %>%
+  as.data.frame() %>%
+  left_join(yes,
+            by=c("B7b" = "yes_no_code")) %>%
+  mutate(Percent=proportion,
+         `Margin of error` = 1.96*proportion_se,
+         Sample=round(total,0)) %>%
+  select(Response=Response, 
+         Percent,
+         `Margin of error`,
+         Sample) %>%
+  gt() %>%
+  fmt_percent(vars(Percent, `Margin of error`),
+              decimals=1) %>%
+  fmt_number(vars(Sample),
+             decimals = 0)
+b7b
+```
+
+#### People in Need (PIN)
+
+```{r}
+b7c <- svyrdat %>%
+  group_by(B7c) %>%
+  summarise(proportion = survey_mean(),
+            total = survey_total()) %>%
+  as.data.frame() %>%
+  left_join(yes,
+            by=c("B7c" = "yes_no_code")) %>%
+  mutate(Percent=proportion,
+         `Margin of error` = 1.96*proportion_se,
+         Sample=round(total,0)) %>%
+  select(Response=Response, 
+         Percent,
+         `Margin of error`,
+         Sample) %>%
+  gt() %>%
+  fmt_percent(vars(Percent, `Margin of error`),
+              decimals=1) %>%
+  fmt_number(vars(Sample),
+             decimals = 0)
+b7c
+```
+
+#### Department for International Development (DfID)
+
+```{r}
+b7d <- svyrdat %>%
+  group_by(B7d) %>%
+  summarise(proportion = survey_mean(),
+            total = survey_total()) %>%
+  as.data.frame() %>%
+  left_join(yes,
+            by=c("B7d" = "yes_no_code")) %>%
+  mutate(Percent=proportion,
+         `Margin of error` = 1.96*proportion_se,
+         Sample=round(total,0)) %>%
+  select(Response=Response, 
+         Percent,
+         `Margin of error`,
+         Sample) %>%
+  gt() %>%
+  fmt_percent(vars(Percent, `Margin of error`),
+              decimals=1) %>%
+  fmt_number(vars(Sample),
+             decimals = 0)
+b7d
+```
+
+#### Norwegian Refugee Council (NRC)
+
+```{r}
+b7e <- svyrdat %>%
+  group_by(B7e) %>%
+  summarise(proportion = survey_mean(),
+            total = survey_total()) %>%
+  as.data.frame() %>%
+  left_join(yes,
+            by=c("B7e" = "yes_no_code")) %>%
+  mutate(Percent=proportion,
+         `Margin of error` = 1.96*proportion_se,
+         Sample=round(total,0)) %>%
+  select(Response=Response, 
+         Percent,
+         `Margin of error`,
+         Sample) %>%
+  gt() %>%
+  fmt_percent(vars(Percent, `Margin of error`),
+              decimals=1) %>%
+  fmt_number(vars(Sample),
+             decimals = 0)
+b7e
+```
+
+#### Japan International Cooperation Agency (JICA)
+
+```{r}
+b7f <- svyrdat %>%
+  group_by(B7f) %>%
+  summarise(proportion = survey_mean(),
+            total = survey_total()) %>%
+  as.data.frame() %>%
+  left_join(yes,
+            by=c("B7f" = "yes_no_code")) %>%
+  mutate(Percent=proportion,
+         `Margin of error` = 1.96*proportion_se,
+         Sample=round(total,0)) %>%
+  select(Response=Response, 
+         Percent,
+         `Margin of error`,
+         Sample) %>%
+  gt() %>%
+  fmt_percent(vars(Percent, `Margin of error`),
+              decimals=1) %>%
+  fmt_number(vars(Sample),
+             decimals = 0)
+b7f
+```
+
+#### Canada International Development Agency (CIDA)
+
+```{r}
+b7g <- svyrdat %>%
+  group_by(B7g) %>%
+  summarise(proportion = survey_mean(),
+            total = survey_total()) %>%
+  as.data.frame() %>%
+  left_join(yes,
+            by=c("B7g" = "yes_no_code")) %>%
+  mutate(Percent=proportion,
+         `Margin of error` = 1.96*proportion_se,
+         Sample=round(total,0)) %>%
+  select(Response=Response, 
+         Percent,
+         `Margin of error`,
+         Sample) %>%
+  gt() %>%
+  fmt_percent(vars(Percent, `Margin of error`),
+              decimals=1) %>%
+  fmt_number(vars(Sample),
+             decimals = 0)
+b7g
+```
+
+#### Aga Khan Foundation
+
+```{r}
+b7h <- svyrdat %>%
+  group_by(B7h) %>%
+  summarise(proportion = survey_mean(),
+            total = survey_total()) %>%
+  as.data.frame() %>%
+  left_join(yes,
+            by=c("B7h" = "yes_no_code")) %>%
+  mutate(Percent=proportion,
+         `Margin of error` = 1.96*proportion_se,
+         Sample=round(total,0)) %>%
+  select(Response=Response, 
+         Percent,
+         `Margin of error`,
+         Sample) %>%
+  gt() %>%
+  fmt_percent(vars(Percent, `Margin of error`),
+              decimals=1) %>%
+  fmt_number(vars(Sample),
+             decimals = 0)
+b7h
+```
+
+#### Sweden International Development Agency (Sida)
+
+```{r}
+b7i <- svyrdat %>%
+  group_by(B7i) %>%
+  summarise(proportion = survey_mean(),
+            total = survey_total()) %>%
+  as.data.frame() %>%
+  left_join(yes,
+            by=c("B7i" = "yes_no_code")) %>%
+  mutate(Percent=proportion,
+         `Margin of error` = 1.96*proportion_se,
+         Sample=round(total,0)) %>%
+  select(Response=Response, 
+         Percent,
+         `Margin of error`,
+         Sample) %>%
+  gt() %>%
+  fmt_percent(vars(Percent, `Margin of error`),
+              decimals=1) %>%
+  fmt_number(vars(Sample),
+             decimals = 0)
+b7i
+```
+
+#### European Union (EU)
+
+```{r}
+b7j <- svyrdat %>%
+  group_by(B7j) %>%
+  summarise(proportion = survey_mean(),
+            total = survey_total()) %>%
+  as.data.frame() %>%
+  left_join(yes,
+            by=c("B7j" = "yes_no_code")) %>%
+  mutate(Percent=proportion,
+         `Margin of error` = 1.96*proportion_se,
+         Sample=round(total,0)) %>%
+  select(Response=Response, 
+         Percent,
+         `Margin of error`,
+         Sample) %>%
+  gt() %>%
+  fmt_percent(vars(Percent, `Margin of error`),
+              decimals=1) %>%
+  fmt_number(vars(Sample),
+             decimals = 0)
+b7j
+```
+
+#### International Office for Migration (IOM)
+
+```{r}
+b7k <- svyrdat %>%
+  group_by(B7k) %>%
+  summarise(proportion = survey_mean(),
+            total = survey_total()) %>%
+  as.data.frame() %>%
+  left_join(yes,
+            by=c("B7k" = "yes_no_code")) %>%
+  mutate(Percent=proportion,
+         `Margin of error` = 1.96*proportion_se,
+         Sample=round(total,0)) %>%
+  select(Response=Response, 
+         Percent,
+         `Margin of error`,
+         Sample) %>%
+  gt() %>%
+  fmt_percent(vars(Percent, `Margin of error`),
+              decimals=1) %>%
+  fmt_number(vars(Sample),
+             decimals = 0)
+b7k
+```
+
+### B8. If you have ever seen the logo, please try to identify what government donor or implementing organization is associated with each logo.
+
+#### United States Agency for International Development (USAID)
+
+```{r}
+b8a <- svyrdat %>%
+  group_by(B8a) %>%
+  summarise(proportion = survey_mean(),
+            total = survey_total()) %>%
+  as.data.frame() %>%
+  left_join(yes,
+            by=c("B8a" = "yes_no_code")) %>%
+  mutate(Percent=proportion,
+         `Margin of error` = 1.96*proportion_se,
+         Sample=round(total,0)) %>%
+  select(Response=Response, 
+         Percent,
+         `Margin of error`,
+         Sample) %>%
+  gt() %>%
+  fmt_percent(vars(Percent, `Margin of error`),
+              decimals=1) %>%
+  fmt_number(vars(Sample),
+             decimals = 0)
+b8a
+```
+
+#### German Society for International Cooperation (GIZ)
+
+```{r}
+b8b <- svyrdat %>%
+  group_by(B8b) %>%
+  summarise(proportion = survey_mean(),
+            total = survey_total()) %>%
+  as.data.frame() %>%
+  left_join(yes,
+            by=c("B8b" = "yes_no_code")) %>%
+  mutate(Percent=proportion,
+         `Margin of error` = 1.96*proportion_se,
+         Sample=round(total,0)) %>%
+  select(Response=Response, 
+         Percent,
+         `Margin of error`,
+         Sample) %>%
+  gt() %>%
+  fmt_percent(vars(Percent, `Margin of error`),
+              decimals=1) %>%
+  fmt_number(vars(Sample),
+             decimals = 0)
+b8b
+```
+
+#### People in Need (PIN)
+
+```{r}
+b8c <- svyrdat %>%
+  group_by(B8c) %>%
+  summarise(proportion = survey_mean(),
+            total = survey_total()) %>%
+  as.data.frame() %>%
+  left_join(yes,
+            by=c("B8c" = "yes_no_code")) %>%
+  mutate(Percent=proportion,
+         `Margin of error` = 1.96*proportion_se,
+         Sample=round(total,0)) %>%
+  select(Response=Response, 
+         Percent,
+         `Margin of error`,
+         Sample) %>%
+  gt() %>%
+  fmt_percent(vars(Percent, `Margin of error`),
+              decimals=1) %>%
+  fmt_number(vars(Sample),
+             decimals = 0)
+b8c
+```
+
+#### Department for International Development (DfID)
+
+```{r}
+b8d <- svyrdat %>%
+  group_by(B8d) %>%
+  summarise(proportion = survey_mean(),
+            total = survey_total()) %>%
+  as.data.frame() %>%
+  left_join(yes,
+            by=c("B8d" = "yes_no_code")) %>%
+  mutate(Percent=proportion,
+         `Margin of error` = 1.96*proportion_se,
+         Sample=round(total,0)) %>%
+  select(Response=Response, 
+         Percent,
+         `Margin of error`,
+         Sample) %>%
+  gt() %>%
+  fmt_percent(vars(Percent, `Margin of error`),
+              decimals=1) %>%
+  fmt_number(vars(Sample),
+             decimals = 0)
+b8d
+```
+
+#### Norwegian Refugee Council (NRC)
+
+```{r}
+b8e <- svyrdat %>%
+  group_by(B8e) %>%
+  summarise(proportion = survey_mean(),
+            total = survey_total()) %>%
+  as.data.frame() %>%
+  left_join(yes,
+            by=c("B8e" = "yes_no_code")) %>%
+  mutate(Percent=proportion,
+         `Margin of error` = 1.96*proportion_se,
+         Sample=round(total,0)) %>%
+  select(Response=Response, 
+         Percent,
+         `Margin of error`,
+         Sample) %>%
+  gt() %>%
+  fmt_percent(vars(Percent, `Margin of error`),
+              decimals=1) %>%
+  fmt_number(vars(Sample),
+             decimals = 0)
+b8e
+```
+
+#### Japan International Cooperation Agency (JICA)
+
+```{r}
+b8f <- svyrdat %>%
+  group_by(B8f) %>%
+  summarise(proportion = survey_mean(),
+            total = survey_total()) %>%
+  as.data.frame() %>%
+  left_join(yes,
+            by=c("B8f" = "yes_no_code")) %>%
+  mutate(Percent=proportion,
+         `Margin of error` = 1.96*proportion_se,
+         Sample=round(total,0)) %>%
+  select(Response=Response, 
+         Percent,
+         `Margin of error`,
+         Sample) %>%
+  gt() %>%
+  fmt_percent(vars(Percent, `Margin of error`),
+              decimals=1) %>%
+  fmt_number(vars(Sample),
+             decimals = 0)
+b8f
+```
+
+#### Canada International Development Agency (CIDA)
+
+```{r}
+b8g <- svyrdat %>%
+  group_by(B8g) %>%
+  summarise(proportion = survey_mean(),
+            total = survey_total()) %>%
+  as.data.frame() %>%
+  left_join(yes,
+            by=c("B8g" = "yes_no_code")) %>%
+  mutate(Percent=proportion,
+         `Margin of error` = 1.96*proportion_se,
+         Sample=round(total,0)) %>%
+  select(Response=Response, 
+         Percent,
+         `Margin of error`,
+         Sample) %>%
+  gt() %>%
+  fmt_percent(vars(Percent, `Margin of error`),
+              decimals=1) %>%
+  fmt_number(vars(Sample),
+             decimals = 0)
+b8g
+```
+
+#### Aga Khan Foundation
+
+```{r}
+b8h <- svyrdat %>%
+  group_by(B8h) %>%
+  summarise(proportion = survey_mean(),
+            total = survey_total()) %>%
+  as.data.frame() %>%
+  left_join(yes,
+            by=c("B8h" = "yes_no_code")) %>%
+  mutate(Percent=proportion,
+         `Margin of error` = 1.96*proportion_se,
+         Sample=round(total,0)) %>%
+  select(Response=Response, 
+         Percent,
+         `Margin of error`,
+         Sample) %>%
+  gt() %>%
+  fmt_percent(vars(Percent, `Margin of error`),
+              decimals=1) %>%
+  fmt_number(vars(Sample),
+             decimals = 0)
+b8h
+```
+
+#### Sweden International Development Agency (Sida)
+
+```{r}
+b8i <- svyrdat %>%
+  group_by(B8i) %>%
+  summarise(proportion = survey_mean(),
+            total = survey_total()) %>%
+  as.data.frame() %>%
+  left_join(yes,
+            by=c("B8i" = "yes_no_code")) %>%
+  mutate(Percent=proportion,
+         `Margin of error` = 1.96*proportion_se,
+         Sample=round(total,0)) %>%
+  select(Response=Response, 
+         Percent,
+         `Margin of error`,
+         Sample) %>%
+  gt() %>%
+  fmt_percent(vars(Percent, `Margin of error`),
+              decimals=1) %>%
+  fmt_number(vars(Sample),
+             decimals = 0)
+b8i
+```
+
+#### European Union (EU)
+
+```{r}
+b8j <- svyrdat %>%
+  group_by(B8j) %>%
+  summarise(proportion = survey_mean(),
+            total = survey_total()) %>%
+  as.data.frame() %>%
+  left_join(yes,
+            by=c("B8j" = "yes_no_code")) %>%
+  mutate(Percent=proportion,
+         `Margin of error` = 1.96*proportion_se,
+         Sample=round(total,0)) %>%
+  select(Response=Response, 
+         Percent,
+         `Margin of error`,
+         Sample) %>%
+  gt() %>%
+  fmt_percent(vars(Percent, `Margin of error`),
+              decimals=1) %>%
+  fmt_number(vars(Sample),
+             decimals = 0)
+b8j
+```
+
+#### International Office for Migration (IOM)
+
+```{r}
+b8k <- svyrdat %>%
+  group_by(B8k) %>%
+  summarise(proportion = survey_mean(),
+            total = survey_total()) %>%
+  as.data.frame() %>%
+  left_join(yes,
+            by=c("B8k" = "yes_no_code")) %>%
+  mutate(Percent=proportion,
+         `Margin of error` = 1.96*proportion_se,
+         Sample=round(total,0)) %>%
+  select(Response=Response, 
+         Percent,
+         `Margin of error`,
+         Sample) %>%
+  gt() %>%
+  fmt_percent(vars(Percent, `Margin of error`),
+              decimals=1) %>%
+  fmt_number(vars(Sample),
+             decimals = 0)
+b8k
+```
