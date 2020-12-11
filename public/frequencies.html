@@ -9,11 +9,11 @@
 <meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 
-<meta name="author" content="dkillian" />
+<meta name="author" content="Jeff Yang, Jacob Patterson-Stein, Dan Killian" />
 
 <meta name="date" content="2020-12-11" />
 
-<title>frequencies</title>
+<title>Descriptive statistics</title>
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -406,8 +406,8 @@ div.tocify {
 
 
 
-<h1 class="title toc-ignore">frequencies</h1>
-<h4 class="author">dkillian</h4>
+<h1 class="title toc-ignore">Descriptive statistics</h1>
+<h4 class="author">Jeff Yang, Jacob Patterson-Stein, Dan Killian</h4>
 <h4 class="date">2020-12-11</h4>
 
 </div>
@@ -557,16 +557,16 @@ unnamed-chunk-9
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgitlabcomdkillianbppstree603b080b22f593594296a7f4a880a5bee3aea44atargetblank603b080a"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://gitlab.com/dkillian/bpps/tree/603b080b22f593594296a7f4a880a5bee3aea44a" target="_blank">603b080</a> </a>
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgitlabcomdkillianbppstree74fbf2c22bcd9ae3b75313b56b6e2830b88fed83targetblank74fbf2ca"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://gitlab.com/dkillian/bpps/tree/74fbf2c22bcd9ae3b75313b56b6e2830b88fed83" target="_blank">74fbf2c</a> </a>
 </p>
 </div>
-<div id="strongRepositoryversionstrongahrefhttpsgitlabcomdkillianbppstree603b080b22f593594296a7f4a880a5bee3aea44atargetblank603b080a" class="panel-collapse collapse">
+<div id="strongRepositoryversionstrongahrefhttpsgitlabcomdkillianbppstree74fbf2c22bcd9ae3b75313b56b6e2830b88fed83targetblank74fbf2ca" class="panel-collapse collapse">
 <div class="panel-body">
 <p>
 Great! You are using Git for version control. Tracking code development and connecting the code version to the results is critical for reproducibility.
 </p>
 <p>
-The results in this page were generated with repository version <a href="https://gitlab.com/dkillian/bpps/tree/603b080b22f593594296a7f4a880a5bee3aea44a" target="_blank">603b080</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
+The results in this page were generated with repository version <a href="https://gitlab.com/dkillian/bpps/tree/74fbf2c22bcd9ae3b75313b56b6e2830b88fed83" target="_blank">74fbf2c</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
 </p>
 <p>
 Note that you need to be careful to ensure that all relevant files for the analysis have been committed to Git prior to generating the results (you can use <code>wflow_publish</code> or <code>wflow_git_commit</code>). workflowr only checks the R Markdown file, but you know if there are other scripts or data files that it depends on. Below is the status of the Git repository when the results were generated:
@@ -585,6 +585,7 @@ Untracked files:
 
 Unstaged changes:
     Modified:   analysis/_site.yml
+    Modified:   analysis/descriptives.Rmd
     Modified:   analysis/index.Rmd
     Deleted:    analysis/univariate frequencies.Rmd
 
@@ -625,6 +626,40 @@ Message
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+Rmd
+</td>
+<td>
+<a href="https://gitlab.com/dkillian/bpps/blob/74fbf2c22bcd9ae3b75313b56b6e2830b88fed83/analysis/frequencies.Rmd" target="_blank">74fbf2c</a>
+</td>
+<td>
+dkillian
+</td>
+<td>
+2020-12-11
+</td>
+<td>
+wflow_publish(“analysis/frequencies.Rmd”)
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://glcdn.githack.com/dkillian/bpps/raw/f0781ebc25a91bea0aaa5d087fa87b5c96cdb158/public/frequencies.html" target="_blank">f0781eb</a>
+</td>
+<td>
+dkillian
+</td>
+<td>
+2020-12-11
+</td>
+<td>
+Build site.
+</td>
+</tr>
 <tr>
 <td>
 Rmd
@@ -756,10 +791,12 @@ Publish the initial analytical files for myproject
 </div>
 <div id="introduction" class="section level2">
 <h2>Introduction</h2>
+<p>This section provides the raw frequencies and means of the BPPS survey data.</p>
 <div id="module-b.-awareness-of-usaid" class="section level3">
 <h3>Module B. Awareness of USAID</h3>
 <div id="b1.-are-you-aware-of-the-united-states-agency-for-international-development-usaid" class="section level4">
 <h4>B1. Are you aware of the United States Agency for International Development (USAID)?</h4>
+<p>simple version</p>
 <style>html {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
 }
@@ -1125,6 +1162,7 @@ Publish the initial analytical files for myproject
   
   
 </table></div>
+<p>with margin and sample size</p>
 <style>html {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
 }
@@ -1503,8 +1541,8 @@ Publish the initial analytical files for myproject
 </div>
 <div id="b3.-why-do-you-think-the-united-states-government-provides-this-support-to-the-government-of-afghanistan" class="section level4">
 <h4>B3. Why do you think the United States Government provides this support to the Government of Afghanistan?</h4>
-<div id="b3a-to-help-reduce-poverty" class="section level5">
-<h5>B3a To help reduce poverty</h5>
+<div id="to-help-reduce-poverty" class="section level5">
+<h5>To help reduce poverty</h5>
 <style>html {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
 }
