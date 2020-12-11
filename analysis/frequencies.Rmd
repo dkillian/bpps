@@ -1,0 +1,187 @@
+---
+title: "frequencies"
+author: "dkillian"
+date: "2020-12-11"
+output: workflowr::wflow_html
+editor_options:
+  chunk_output_type: console
+---
+
+#####
+
+```{r global_options, include=F, warning=F, message=F, echo=F, error=F}
+
+# standard figure size and generate clean output
+knitr::opts_chunk$set(fig.width=10, fig.height=8, warning=FALSE, message=FALSE, cache=TRUE, error=T, echo=F)
+
+```
+
+```{r, include=F, warning=F, message=F, echo=F, error=F}
+#source("code/00 BPPS - workflowr prep.R")
+
+packages <- c("arm", "BMA", "brms", "corrplot", "dummies","DescTools", "estimatr","extrafont", "extrafontdb", "janitor", "reshape2","tidyr","broom", "haven", "HH","Hmisc","lubridate","knitr", "margins", "magrittr", "plotrix", "scales","survey", "srvyr", "sysfonts", "foreign","car", "ICC", "PowerUpR", "openxlsx", "ggrepel", "readr", "readxl", "sjmisc", "sjPlot", "sjstats", "sjlabelled", "skimr","labelled", "texreg", "janitor","psych","dplyr", "tidyverse", "bbplot", "viridis", "here", "ggridges", "ggthemes", "DT", "jtools", "huxtable", "stringi", "gghighlight", "plm", "rethinking" , "brms", "rstan", "rstanarm","tidybayes","texreg","gt","gtsummary","huxtable","stargazer", "gsynth", "panelView", "assertr", "pointblank", "validate", "sandwich", "knitr", "kableExtra", "formattable")
+
+lapply(packages, library, character.only=T)
+
+font_add_google("Source Sans Pro", "sans-serif")
+
+options(digits=4, scipen=6)
+
+# set default
+theme_set(theme_bw() + theme(panel.grid.minor.x=element_blank(),
+                             panel.grid.minor.y=element_blank(),
+                             plot.title=element_text(face="bold",size=18, hjust=.5, family = "Source Sans Pro"),
+                             plot.subtitle = element_text(size=16, family="Source Sans Pro"),
+                             plot.caption=element_text(size=12, family="Source Sans Pro"),
+                             axis.title=element_text(size=16, family="Source Sans Pro"),
+                             axis.text=element_text(size=14, family="Source Sans Pro"),    
+                             legend.text=element_text(size=14, family="Source Sans Pro"),
+                             strip.text=element_text(size=14, family="Source Sans Pro"))) 
+
+
+# without border
+base_style <- function(){theme_bw() +
+    theme(panel.grid.minor.x=element_blank(),
+          panel.grid.minor.y=element_blank(),
+          plot.title=element_text(face="bold",size=18, hjust=.5, family = "Source Sans Pro"),
+          plot.subtitle = element_text(size=16, family="Source Sans Pro"),
+          plot.caption=element_text(size=12, family="Source Sans Pro"),
+          axis.title=element_text(size=16, family="Source Sans Pro"),
+          axis.text=element_text(size=14, family="Source Sans Pro"),    
+          legend.text=element_text(size=14, family="Source Sans Pro"),
+          strip.text=element_text(size=14, family="Source Sans Pro"),
+          panel.border=element_blank(),
+          axis.ticks = element_blank()) 
+}
+
+path <- "../../BPPS analysis/data/BPPS hh instrument pre-codebook.xlsx"
+
+labs <- path %>%
+  excel_sheets() %>%
+  set_names() %>%
+  lapply(function(x) read_xlsx(x, path=path))
+
+lablist <- names(labs) %>%
+  as.data.frame()
+
+yes <- labs$yes_no
+agree4 <- labs$agree4
+
+dat <- read_rds("../../BPPS analysis/data/prepared/BPPS prepared.rds")
+
+svydat <- svydesign(data = dat,
+                    ids= ~PSU + A9,
+                    strata = ~strata,
+                    weights = ~Wgt1)
+
+
+svyrdat <- dat %>%
+  as_survey_design(ids= PSU,
+                   strata=strata,
+                   weights=Wgt1)
+```
+
+
+## Introduction
+
+### Module B. Awareness of USAID
+
+#### B1. Are you aware of the United States Agency for International Development (USAID)? 
+
+```{r}
+b1 <- svytable(~B1,
+         design=svydat,
+         Ntotal=T) %>%
+  as.data.frame() %>%
+  mutate(B1 = as.numeric(as.character(B1))) %>%
+  left_join(labs$yes_no, by=c("B1"="yes_no_code")) %>%
+  select(Response, Percent=Freq) %>%
+  gt() %>%
+  fmt_percent(vars(Percent),
+              decimals=1)
+
+
+b1
+
+```
+
+```{r}
+b1_m <- svymean(~aware,
+                na.rm=T,
+                design=svydat) 
+
+b1_m
+
+```
+
+```{r}
+kbl(b1_m)
+```
+
+
+```{r}
+b1_s <- svyrdat %>%
+  group_by(B1) %>%
+  summarise(proportion = survey_mean(),
+            total = survey_total()) %>%
+  as.data.frame() %>%
+  left_join(yes,
+            by=c("B1" = "yes_no_code")) %>%
+  mutate(Percent=percent(proportion, digits=3),
+         `Margin of error` = percent(1.96*proportion_se, digits=0),
+         Sample=round(total,0)) %>%
+  select(Response, 
+         Percent,
+         `Margin of error`,
+         Sample)
+
+b1_s
+
+```
+
+```{r}
+
+b1_sgt <- b1_s %>%
+  gt() %>%
+  fmt_percent(vars(Percent, `Margin of error`),
+              decimals=1)
+
+b1_sgt
+
+```
+
+```{r}
+svymean(~aware,
+        na.rm=T,
+        svydat)
+```
+
+```{r}
+
+kbl(b1_s)
+
+```
+
+#### B3. Why do you think the United States Government provides this support to the Government of Afghanistan?
+
+```{r}
+b3_a <- svyrdat %>%
+  group_by(B3a) %>%
+  summarise(proportion = survey_mean(),
+            total = survey_total()) %>%
+  as.data.frame() %>%
+  left_join(agree4,
+            by=c("B3a" = "agree4_code")) %>%
+  mutate(Percent=proportion,
+         `Margin of error` = 1.96*proportion_se,
+         Sample=round(total,0)) %>%
+  select(Response=agree4_lab, 
+         Percent,
+         `Margin of error`,
+         Sample) %>%
+  gt() %>%
+  fmt_percent(vars(Percent, `Margin of error`),
+              decimals=1)
+
+b3_a
+```
