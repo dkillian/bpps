@@ -1,6 +1,6 @@
 ---
-title: "frequencies"
-author: "dkillian"
+title: "Descriptive statistics"
+author: "Jeff Yang, Jacob Patterson-Stein, Dan Killian"
 date: "2020-12-11"
 output: workflowr::wflow_html
 editor_options:
@@ -84,9 +84,13 @@ svyrdat <- dat %>%
 
 ## Introduction
 
+This section provides the raw frequencies and means of the BPPS survey data. 
+
 ### Module B. Awareness of USAID
 
 #### B1. Are you aware of the United States Agency for International Development (USAID)? 
+
+simple version 
 
 ```{r}
 b1 <- svytable(~B1,
@@ -105,6 +109,7 @@ b1
 
 ```
 
+with margin and sample size
 
 ```{r}
 b1_s <- svyrdat %>%
@@ -131,7 +136,7 @@ b1_s
 
 #### B3. Why do you think the United States Government provides this support to the Government of Afghanistan?
 
-##### B3a To help reduce poverty
+##### To help reduce poverty
 
 ```{r}
 b3_a <- svyrdat %>%
