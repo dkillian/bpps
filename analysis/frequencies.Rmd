@@ -54,12 +54,9 @@ base_style <- function(){theme_bw() +
           axis.ticks = element_blank()) 
 }
 
-<<<<<<< HEAD
-path <- "../BPPS analysis/data/BPPS hh instrument pre-codebook.xlsx"
-=======
-#path <- "../../BPPS analysis/data/BPPS hh instrument pre-codebook.xlsx"
+# path <- "../BPPS analysis/data/BPPS hh instrument pre-codebook.xlsx"
 path <- "data/BPPS hh instrument pre-codebook.xlsx"
->>>>>>> 3580e8afb7db0e9c56e753cca9119fb242066807
+
 
 labs <- path %>%
   excel_sheets() %>%
@@ -72,12 +69,8 @@ lablist <- names(labs) %>%
 yes <- labs$yes_no
 agree4 <- labs$agree4
 
-<<<<<<< HEAD
-dat <- read_rds("../BPPS analysis/data/prepared/BPPS prepared.rds")
-=======
-#dat <- read_rds("../../BPPS analysis/data/prepared/BPPS prepared.rds")
+# dat <- read_rds("../BPPS analysis/data/prepared/BPPS prepared.rds")
 dat <- read_rds("data/prepared/BPPS prepared.rds")
->>>>>>> 3580e8afb7db0e9c56e753cca9119fb242066807
 
 svydat <- svydesign(data = dat,
                     ids= ~PSU + A9,
@@ -169,3 +162,27 @@ b3_a <- svyrdat %>%
 
 b3_a
 ```
+
+```{r}
+b3_b <- svyrdat %>%
+  group_by(B3b) %>%
+  summarise(proportion = survey_mean(),
+            total = survey_total()) %>%
+  as.data.frame() %>%
+  left_join(agree4,
+            by=c("B3b" = "agree4_code")) %>%
+  mutate(Percent=proportion,
+         `Margin of error` = 1.96*proportion_se,
+         Sample=round(total,0)) %>%
+  select(Response=agree4_lab, 
+         Percent,
+         `Margin of error`,
+         Sample) %>%
+  gt() %>%
+  fmt_percent(vars(Percent, `Margin of error`),
+              decimals=1) %>%
+  fmt_number(vars(Sample),
+             decimals = 0)
+b3_b
+```
+
