@@ -7,8 +7,14 @@ navbar:
     href: index.html
   - text: About
     href: about.html
+  - text: Methods
+    href: methods.html
+  - text: Descriptive statistics
+    href: descriptives.html
   - text: Exploratory analyses
     href: explore.html
+  - text: Regression modeling
+    href: models.html
   - text: License
     href: license.html
   right:
