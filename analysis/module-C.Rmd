@@ -1,0 +1,329 @@
+---
+title: "module-C"
+author: "dkillian"
+date: "2020-12-15"
+output: workflowr::wflow_html
+editor_options:
+  chunk_output_type: console
+---
+
+## Introduction
+
+```{r}
+library(ggplot2)
+
+a <- data.frame(x = rnorm(100, 100, 15))
+
+ggplot(a, aes(x)) + 
+  stat_density(geom="line", size=1, color="dodgerblue") +
+  theme_bw()
+```
+
+#####
+
+```{r global_options, include=F, warning=F, message=F, echo=F, error=F}
+
+# standard figure size and generate clean output
+knitr::opts_chunk$set(fig.width=10, fig.height=8, warning=FALSE, message=FALSE, cache=TRUE, error=T, echo=F)
+
+```
+
+```{r, include=F, warning=F, message=F, echo=F, error=F}
+#source("code/00 BPPS - workflowr prep.R")
+
+packages <- c("arm", "BMA", "brms", "corrplot", "dummies","DescTools", "estimatr","extrafont", "extrafontdb", "janitor", "reshape2","tidyr","broom", "haven", "HH","Hmisc","lubridate","knitr", "margins", "magrittr", "plotrix", "scales","survey", "srvyr", "sysfonts", "foreign","car", "ICC", "PowerUpR", "openxlsx", "ggrepel", "readr", "readxl", "sjmisc", "sjPlot", "sjstats", "sjlabelled", "skimr","labelled", "texreg", "janitor","psych","dplyr", "tidyverse", "bbplot", "viridis", "here", "ggridges", "ggthemes", "DT", "jtools", "huxtable", "stringi", "gghighlight", "plm", "rethinking" , "brms", "rstan", "rstanarm","tidybayes","texreg","gt","gtsummary","huxtable","stargazer", "gsynth", "panelView", "assertr", "pointblank", "validate", "sandwich", "knitr", "kableExtra", "formattable")
+
+lapply(packages, library, character.only=T)
+
+font_add_google("Source Sans Pro", "sans-serif")
+
+options(digits=4, scipen=6)
+
+# set default
+theme_set(theme_bw() + theme(panel.grid.minor.x=element_blank(),
+                             panel.grid.minor.y=element_blank(),
+                             plot.title=element_text(face="bold",size=18, hjust=.5, family = "Source Sans Pro"),
+                             plot.subtitle = element_text(size=16, family="Source Sans Pro"),
+                             plot.caption=element_text(size=12, family="Source Sans Pro"),
+                             axis.title=element_text(size=16, family="Source Sans Pro"),
+                             axis.text=element_text(size=14, family="Source Sans Pro"),    
+                             legend.text=element_text(size=14, family="Source Sans Pro"),
+                             strip.text=element_text(size=14, family="Source Sans Pro"))) 
+
+
+# without border
+base_style <- function(){theme_bw() +
+    theme(panel.grid.minor.x=element_blank(),
+          panel.grid.minor.y=element_blank(),
+          plot.title=element_text(face="bold",size=18, hjust=.5, family = "Source Sans Pro"),
+          plot.subtitle = element_text(size=16, family="Source Sans Pro"),
+          plot.caption=element_text(size=12, family="Source Sans Pro"),
+          axis.title=element_text(size=16, family="Source Sans Pro"),
+          axis.text=element_text(size=14, family="Source Sans Pro"),    
+          legend.text=element_text(size=14, family="Source Sans Pro"),
+          strip.text=element_text(size=14, family="Source Sans Pro"),
+          panel.border=element_blank(),
+          axis.ticks = element_blank()) 
+}
+
+# path <- "../BPPS analysis/data/BPPS hh instrument pre-codebook.xlsx"
+path <- "data/BPPS hh instrument pre-codebook.xlsx"
+
+
+labs <- path %>%
+  excel_sheets() %>%
+  set_names() %>%
+  lapply(function(x) read_xlsx(x, path=path))
+
+lablist <- names(labs) %>%
+  as.data.frame()
+
+yes <- labs$yes_no
+agree4 <- labs$agree4
+
+# dat <- read_rds("../BPPS analysis/data/prepared/BPPS prepared.rds")
+dat <- read_rds("data/prepared/BPPS prepared.rds")
+
+svydat <- svydesign(data = dat,
+                    ids= ~PSU + A9,
+                    strata = ~strata,
+                    weights = ~Wgt1)
+
+
+svyrdat <- dat %>%
+  as_survey_design(ids= PSU,
+                   strata=strata,
+                   weights=Wgt1)
+```
+
+## Module C.Media 
+
+
+
+### C1. Do you listen to radio programs? 
+
+```{r}
+c1 <- svyrdat %>%
+  group_by(C1) %>%
+  summarise(proportion = survey_mean(),
+            total = survey_total()) %>%
+  as.data.frame() %>%
+  left_join(yes,
+            by=c("C1" = "yes_no_code")) %>%
+  mutate(Percent=proportion,
+         `Margin of error` = 1.96*proportion_se,
+         Sample=round(total,0)) %>%
+  select(Response, 
+         Percent,
+         `Margin of error`,
+         Sample) %>%
+  gt() %>%
+  fmt_percent(vars(Percent, `Margin of error`),
+              decimals=1)
+
+c1
+
+```
+
+### C2. How many days a week do you listen to radio programs?
+
+```{r}
+frq(dat$C2)
+get_labels(dat$c2)
+days <- labs$days
+
+c2 <- svyrdat %>%
+  group_by(C2) %>%
+  summarise(proportion = survey_mean(),
+            total = survey_total()) %>%
+  as.data.frame() %>%
+  left_join(days,
+            by=c("C2" = "days_code")) %>%
+  mutate(Percent=proportion,
+         `Margin of error` = 1.96*proportion_se,
+         Sample=round(total,0)) %>%
+  select(Response=days_lab, 
+         Percent,
+         `Margin of error`,
+         Sample) %>%
+  gt() %>%
+  fmt_percent(vars(Percent, `Margin of error`),
+              decimals=1)
+
+c2
+```
+
+### C3. How many hours in a day do you listen to radio programs?
+
+```{r}
+frq(dat$C3)
+hour_code <- c(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,97,98,99)
+hour_lab <- c("1 hour","2 hours","3 hours","4 hours","5 hours","6 hours","7 hours","8 hours","9 hours","10 hours","11 hours","12 hours","13 hours","14 hours","15 hours","16 hours","N/A","Refused","Don't know")
+hours <- data.frame(hour_code, hour_lab)
+names(hours)
+
+c3 <- svyrdat %>%
+  group_by(C3) %>%
+  summarise(proportion = survey_mean(),
+            total = survey_total()) %>%
+  as.data.frame() %>%
+  left_join(hours,
+            by=c("C3" = "hour_code")) %>%
+  mutate(Percent=proportion,
+         `Margin of error` = 1.96*proportion_se,
+         Sample=round(total,0)) %>%
+  select(Response=hour_lab, 
+         Percent,
+         `Margin of error`,
+         Sample) %>%
+  gt() %>%
+  fmt_percent(vars(Percent, `Margin of error`),
+              decimals=1)
+
+c3
+```
+
+### C4. Which radio stations do you listen to most often? 
+
+```{r}
+frq(dat$C4a)
+frq(dat$C4b)
+
+radio <- data.frame(frq(dat$C4a))
+radio
+```
+
+### C5.
+
+### C6. Do you watch television?  
+
+```{r}
+frq(dat$C6)
+
+c6 <- svyrdat %>%
+  group_by(C6) %>%
+  summarise(proportion = survey_mean(),
+            total = survey_total()) %>%
+  as.data.frame() %>%
+  left_join(yes,
+            by=c("C6" = "yes_no_code")) %>%
+  mutate(Percent=proportion,
+         `Margin of error` = 1.96*proportion_se,
+         Sample=round(total,0)) %>%
+  select(Response, 
+         Percent,
+         `Margin of error`,
+         Sample) %>%
+  gt() %>%
+  fmt_percent(vars(Percent, `Margin of error`),
+              decimals=1)
+
+c6
+```
+
+### C7. How many days a week do you watch television? 
+
+```{r}
+frq(dat$C7)
+
+c7 <- svyrdat %>%
+  group_by(C2) %>%
+  summarise(proportion = survey_mean(),
+            total = survey_total()) %>%
+  as.data.frame() %>%
+  left_join(days,
+            by=c("C2" = "days_code")) %>%
+  mutate(Percent=proportion,
+         `Margin of error` = 1.96*proportion_se,
+         Sample=round(total,0)) %>%
+  select(Response=days_lab, 
+         Percent,
+         `Margin of error`,
+         Sample) %>%
+  gt() %>%
+  fmt_percent(vars(Percent, `Margin of error`),
+              decimals=1)
+
+c7
+```
+
+### C8. How many hours in a day do you watch television? 
+
+```{r}
+frq(dat$C8)
+
+c8 <- svyrdat %>%
+  group_by(C8) %>%
+  summarise(proportion = survey_mean(),
+            total = survey_total()) %>%
+  as.data.frame() %>%
+  left_join(hours,
+            by=c("C8" = "hour_code")) %>%
+  mutate(Percent=proportion,
+         `Margin of error` = 1.96*proportion_se,
+         Sample=round(total,0)) %>%
+  select(Response=hour_lab, 
+         Percent,
+         `Margin of error`,
+         Sample) %>%
+  gt() %>%
+  fmt_percent(vars(Percent, `Margin of error`),
+              decimals=1)
+
+c8
+```
+
+### C9.
+
+### C10.
+
+### C11. Does this household have access to internet, either through a cable connection or cellular data? 
+
+```{r}
+c11 <- svyrdat %>%
+  group_by(C11) %>%
+  summarise(proportion = survey_mean(),
+            total = survey_total()) %>%
+  as.data.frame() %>%
+  left_join(yes,
+            by=c("C11" = "yes_no_code")) %>%
+  mutate(Percent=proportion,
+         `Margin of error` = 1.96*proportion_se,
+         Sample=round(total,0)) %>%
+  select(Response, 
+         Percent,
+         `Margin of error`,
+         Sample) %>%
+  gt() %>%
+  fmt_percent(vars(Percent, `Margin of error`),
+              decimals=1)
+
+c11
+```
+
+### C12. About how often do you engage with friends and family on social networking sites about social or political issues?
+
+```{r}
+rate <- labs$rate
+names(rate)
+c12 <- svyrdat %>%
+  group_by(C12) %>%
+  summarise(proportion = survey_mean(),
+            total = survey_total()) %>%
+  as.data.frame() %>%
+  left_join(rate,
+            by=c("C12" = "rate_code")) %>%
+  mutate(Percent=proportion,
+         `Margin of error` = 1.96*proportion_se,
+         Sample=round(total,0)) %>%
+  select(Response = rate_lab, 
+         Percent,
+         `Margin of error`,
+         Sample) %>%
+  gt() %>%
+  fmt_percent(vars(Percent, `Margin of error`),
+              decimals=1)
+
+c12
+```
+

@@ -31,6 +31,8 @@ wflow_open("analysis/demographics.Rmd")
 
 wflow_open("analysis/module-B.Rmd")
 
+wflow_open("analysis/module-C.Rmd")
+
 wflow_open("analysis/frequencies.Rmd")
 
 wflow_publish(c("analysis/index.Rmd", "analysis/survey-management.Rmd", "analysis/demographics.Rmd", "analysis/module-B.Rmd", "analysis/frequencies.Rmd"),
@@ -64,7 +66,7 @@ wflow_use_gitlab(username = "dkillian", repository = "bpps")
 
 wflow_status()
 
-wflow_git_commit("code/workflowr explore.R")
+wflow_git_commit()
 
 wflow_git_push()
 
