@@ -1135,7 +1135,6 @@ c15Ac <- svyrdat %>%
   gt() %>%
   fmt_percent(vars(Percent, `Margin of error`),
               decimals=1)
-
 c15Ac
 ```
 
