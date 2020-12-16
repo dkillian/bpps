@@ -1063,7 +1063,7 @@ c14 <- svyrdat %>%
 c14
 ```
 
-### C15a. After I read each one please tell me how often, if at all, the household uses that source for news and information?
+### C15a. How often does the household consult [media source] for news and information?
 
 #### Radio
 ```{r}
