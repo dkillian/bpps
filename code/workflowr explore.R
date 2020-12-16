@@ -51,6 +51,8 @@ wflow_publish("analysis/descriptives.Rmd")
 wflow_publish("analysis/explore.Rmd")
 wflow_publish("analysis/frequencies.Rmd")
 
+wflow_publish("analysis/module-C.Rmd")
+
 wflow_publish()
 wflow_view()
 
