@@ -68,7 +68,9 @@ wflow_use_gitlab(username = "dkillian", repository = "bpps")
 
 wflow_status()
 
-wflow_git_commit()
+wflow_git_commit("code/workflowr explore.R")
+
+wflow_git_commit("analysis/module-B.Rmd")
 
 wflow_git_push()
 

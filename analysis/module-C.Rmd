@@ -1063,7 +1063,7 @@ c14 <- svyrdat %>%
 c14
 ```
 
-### C15a. After I read each one please tell me how often, if at all, the household uses that source for news and information?
+### C15a. How often does the household consult [media source] for news and information?
 
 #### Radio
 ```{r}
@@ -1580,6 +1580,8 @@ c16
 ```
 
 ### C17. Regarding the USAID message or messages that you described, would you say that you have a very negative or positive impression of the message or messages? Is that somewhat or very negative or positive impression?
+
+HELLO JEFF YANG
 
 ```{r}
 c17 <- svyrdat %>%
