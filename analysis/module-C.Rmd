@@ -123,6 +123,8 @@ c1
 ### C2. How many days a week do you listen to radio programs?
 
 ```{r}
+days <- labs$days
+
 c2 <- svyrdat %>%
   filter(C2<8) %>%
   group_by(C2) %>%
@@ -238,7 +240,6 @@ radio2 <- data.frame(frq(dat$C4b)) %>%
          radio_lab = label) %>%
   select(code,radio_lab)
 
-
 c4b <- svyrdat %>%
   group_by(C4b) %>%
   summarise(proportion = survey_mean(),
@@ -267,8 +268,6 @@ c4b
 #### First mention
 
 ```{r}
-frq(dat$C5a)
-
 show1 <- data.frame(frq(dat$C5a)) %>%
   filter(val!=97,
          val!=98,
@@ -280,7 +279,6 @@ show1 <- data.frame(frq(dat$C5a)) %>%
          code = val,
          show_lab = label) %>%
   select(code,show_lab)
-show1
 
 c5a <- svyrdat %>%
   group_by(C5a) %>%
@@ -318,7 +316,6 @@ show2 <- data.frame(frq(dat$C5b)) %>%
          code = val,
          show_lab = label) %>%
   select(code,show_lab)
-show2
 
 c5b <- svyrdat %>%
   group_by(C5b) %>%
@@ -345,8 +342,6 @@ c5b
 ### C6. Do you watch television?  
 
 ```{r}
-frq(dat$C6)
-
 c6 <- svyrdat %>%
   group_by(C6) %>%
   summarise(proportion = survey_mean(),
@@ -371,8 +366,6 @@ c6
 ### C7. How many days a week do you watch television? 
 
 ```{r}
-frq(dat$C7)
-
 c7 <- svyrdat %>%
   group_by(C2) %>%
   summarise(proportion = survey_mean(),
@@ -397,8 +390,6 @@ c7
 ### C8. How many hours in a day do you watch television? 
 
 ```{r}
-frq(dat$C8)
-
 c8 <- svyrdat %>%
   group_by(C8) %>%
   summarise(proportion = survey_mean(),
@@ -425,9 +416,6 @@ c8
 #### First mention
 
 ```{r}
-frq(dat$C9a)
-frq(dat$C9b)
-
 tv1 <- data.frame(frq(dat$C9a)) %>%
   filter(val!=97,
          val!=98,
@@ -439,7 +427,7 @@ tv1 <- data.frame(frq(dat$C9a)) %>%
          code = val,
          tv_lab = label) %>%
   select(code,tv_lab)
-tv1
+
 
 c9a <- svyrdat %>%
   group_by(C9a) %>%
@@ -477,7 +465,7 @@ tv2 <- data.frame(frq(dat$C9b)) %>%
          code = val,
          tv_lab = label) %>%
   select(code,tv_lab)
-tv2
+
 
 c9b <- svyrdat %>%
   group_by(C9b) %>%
@@ -506,7 +494,6 @@ c9b
 #### First mention
 
 ```{r}
-frq(dat$C10a)
 
 tvshow1 <- data.frame(frq(dat$C10a)) %>%
   filter(val!=97,
@@ -519,7 +506,7 @@ tvshow1 <- data.frame(frq(dat$C10a)) %>%
          code = val,
          tvshow_lab = label) %>%
   select(code,tvshow_lab)
-tvshow1
+
 
 c10a <- svyrdat %>%
   group_by(C10a) %>%
@@ -557,7 +544,7 @@ tvshow2 <- data.frame(frq(dat$C10b)) %>%
          code = val,
          tvshow_lab = label) %>%
   select(code,tvshow_lab)
-tvshow2
+
 
 c10b <- svyrdat %>%
   group_by(C10b) %>%
@@ -608,8 +595,6 @@ c11
 ### C12. About how often do you engage with friends and family on social networking sites about social or political issues?
 
 ```{r}
-rate <- labs$rate
-names(rate)
 c12 <- svyrdat %>%
   group_by(C12) %>%
   summarise(proportion = survey_mean(),
@@ -637,13 +622,6 @@ c12
 
 ```{r}
 media <- labs$social_media
-media
-names(media)
-a <- data.frame(frq(dat$C13_1))
-a
-b <- data.frame(frq(dat$C13_2))
-b
-frq(dat$C13_15)
 c13_1 <- svyrdat %>%
   group_by(C13_1) %>%
   summarise(proportion = survey_mean(),
@@ -1038,7 +1016,6 @@ c13_16
 ### C14. In the past year, how often have you visited the website or social networking page of any government office or ministry? 
 
 ```{r}
-frq(dat$C14)
 
 c14 <- svyrdat %>%
   group_by(C14) %>%
@@ -1065,7 +1042,6 @@ c14
 
 #### Radio
 ```{r}
-frq(dat$C15Aa)
 often <- labs$often
 
 c15Aa <- svyrdat %>%
@@ -1305,11 +1281,10 @@ c15Aj
 ```
 
 
-### 15b. Have you seen any message from USAID from that media source in the past year?
+### C15b. Have you seen any message from USAID from that media source in the past year?
 
 #### Radio
 ```{r}
-frq(dat$C15Ba)
 often <- labs$often
 
 c15Ba <- svyrdat %>%
@@ -1552,7 +1527,6 @@ c15Bj
 ### C16. You mentioned reading, seeing, or hearing a message about USAID in the media sources you have used in the past year. Can you describe in a few words the content of that message?  
 
 ```{r}
-frq(dat$C16)
 message <- data.frame(frq(dat$C16)) %>%
   select(val,label)
 
@@ -1604,9 +1578,6 @@ c17
 ### C18a. Why do you have a negative impression?
 
 ```{r}
-frq(dat$C18a)
-frq(dat$C18b)
-
 bad_reason <- data.frame(frq(dat$C18a)) %>%
   select(val,label)
 
@@ -1630,7 +1601,7 @@ c18a <- svyrdat %>%
 c18a
 ```
 
-### 18b. Why do you have a positive impression? 
+### C18b. Why do you have a positive impression? 
 
 ```{r}
 good_reason <- data.frame(frq(dat$C18b)) %>%
