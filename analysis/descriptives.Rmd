@@ -1,7 +1,6 @@
 ---
-title: "Descriptive Statistics"
-author: "Jeff Yang, Jacob Patterson-Stein, Dan Killian"
-date: "2020-12-11"
+name: Descriptive statistics
+output_dir: ../public
 navbar:
   title: Descriptive statistics
   left:
