@@ -237,7 +237,7 @@ radio2 <- data.frame(frq(dat$C4b)) %>%
          code = val,
          radio_lab = label) %>%
   select(code,radio_lab)
-radio2
+
 
 c4b <- svyrdat %>%
   group_by(C4b) %>%
