@@ -46,6 +46,8 @@ output:
 
 This section reviews the raw frequencies and means of the BPPS survey data. The following files explore each survey module. 
 
+## Modules
+
 The following files explore the survey data. 
 
 [frequencies](frequencies.html)
@@ -54,13 +56,13 @@ The following files explore the survey data.
 
 [Demographics](demographics.html)
 
-[Awareness of USAID](module-B.html)
+### [Awareness of USAID](module-B.html)
 
-[Media](module-C.html)
+### [Media](module-C.html)
 
-[Donor activity](module-D.html)
+### [Donor activity](module-D.html)
 
-[Governance](module-E.html)
+### [Governance](module-E.html)
 
 [Corruption](module-F.html)
 
