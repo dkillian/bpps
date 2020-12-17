@@ -9,15 +9,7 @@ editor_options:
 
 ## Introduction
 
-```{r}
-library(ggplot2)
-
-a <- data.frame(x = rnorm(100, 100, 15))
-
-ggplot(a, aes(x)) + 
-  stat_density(geom="line", size=1, color="dodgerblue") +
-  theme_bw()
-```
+Text explaining Module B: Awareness of USAID
 
 #####
 
@@ -119,7 +111,10 @@ c1 <- svyrdat %>%
          Sample) %>%
   gt() %>%
   fmt_percent(vars(Percent, `Margin of error`),
-              decimals=1)
+              decimals=1) %>%
+  fmt_number(vars(Sample),
+             decimals=0) %>%
+  tab_header("C1. Listens to radio")
 
 c1
 
@@ -128,11 +123,12 @@ c1
 ### C2. How many days a week do you listen to radio programs?
 
 ```{r}
-frq(dat$C2)
-get_labels(dat$c2)
+#frq(dat$C2)
+get_labels(dat$C2)
 days <- labs$days
 
 c2 <- svyrdat %>%
+  filter(C2<8) %>%
   group_by(C2) %>%
   summarise(proportion = survey_mean(),
             total = survey_total()) %>%
@@ -148,7 +144,16 @@ c2 <- svyrdat %>%
          Sample) %>%
   gt() %>%
   fmt_percent(vars(Percent, `Margin of error`),
-              decimals=1)
+              decimals=1) %>%
+  fmt_number(vars(Sample),
+             decimals=0) %>%
+  tab_header("C2. Days per week listens to radio") %>%
+  #tab_footnote(footnote="For n=3,030 (42.5%) who listen to radio",
+               #locations=cells_column_labels(
+                 #columns=vars(Percent))
+               #) %>%
+  tab_source_note("For n=3,030 (42.5%) who listen to radio")
+  
 
 c2
 ```
@@ -156,11 +161,11 @@ c2
 ### C3. How many hours in a day do you listen to radio programs?
 
 ```{r}
-frq(dat$C3)
+#frq(dat$C3)
 hour_code <- c(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,97,98,99)
 hour_lab <- c("1 hour","2 hours","3 hours","4 hours","5 hours","6 hours","7 hours","8 hours","9 hours","10 hours","11 hours","12 hours","13 hours","14 hours","15 hours","16 hours","N/A","Refused","Don't know")
 hours <- data.frame(hour_code, hour_lab)
-names(hours)
+#names(hours)
 
 c3 <- svyrdat %>%
   group_by(C3) %>%
@@ -188,8 +193,8 @@ c3
 #### First mention
 
 ```{r}
-frq(dat$C4a)
-frq(dat$C4b)
+#frq(dat$C4a)
+#frq(dat$C4b)
 
 radio1 <- data.frame(frq(dat$C4a)) %>%
   filter(val!=97,
@@ -202,7 +207,7 @@ radio1 <- data.frame(frq(dat$C4a)) %>%
          code = val,
          radio_lab = label) %>%
   select(code,radio_lab)
-radio1
+#radio1
 
 c4a <- svyrdat %>%
   group_by(C4a) %>%
@@ -219,6 +224,7 @@ c4a <- svyrdat %>%
          Percent,
          `Margin of error`,
          Sample) %>%
+  arrange(desc(Sample)) %>%
   gt() %>%
   fmt_percent(vars(Percent, `Margin of error`),
               decimals=1)
@@ -271,6 +277,7 @@ c4b
 
 ```{r}
 frq(dat$C5a)
+
 show1 <- data.frame(frq(dat$C5a)) %>%
   filter(val!=97,
          val!=98,
@@ -1580,8 +1587,6 @@ c16
 ```
 
 ### C17. Regarding the USAID message or messages that you described, would you say that you have a very negative or positive impression of the message or messages? Is that somewhat or very negative or positive impression?
-
-HELLO JEFF YANG
 
 ```{r}
 c17 <- svyrdat %>%
