@@ -9,9 +9,11 @@
 <meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 
+<meta name="author" content="Jeff Yang, Jacob Patterson-Stein, Dan Killian" />
 
+<meta name="date" content="2020-12-11" />
 
-<title>descriptives.utf8.md</title>
+<title>Descriptive Statistics</title>
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -404,6 +406,9 @@ div.tocify {
 
 
 
+<h1 class="title toc-ignore">Descriptive Statistics</h1>
+<h4 class="author">Jeff Yang, Jacob Patterson-Stein, Dan Killian</h4>
+<h4 class="date">2020-12-11</h4>
 
 </div>
 
@@ -459,16 +464,16 @@ This reproducible <a href="http://rmarkdown.rstudio.com">R Markdown</a> analysis
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgitlabcomdkillianbppstree7c4a803a761ad9af6335ca4f08d93f64422a8209targetblank7c4a803a"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://gitlab.com/dkillian/bpps/tree/7c4a803a761ad9af6335ca4f08d93f64422a8209" target="_blank">7c4a803</a> </a>
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgitlabcomdkillianbppstree3a8299500b1c5a52513ae595934636164662540etargetblank3a82995a"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://gitlab.com/dkillian/bpps/tree/3a8299500b1c5a52513ae595934636164662540e" target="_blank">3a82995</a> </a>
 </p>
 </div>
-<div id="strongRepositoryversionstrongahrefhttpsgitlabcomdkillianbppstree7c4a803a761ad9af6335ca4f08d93f64422a8209targetblank7c4a803a" class="panel-collapse collapse">
+<div id="strongRepositoryversionstrongahrefhttpsgitlabcomdkillianbppstree3a8299500b1c5a52513ae595934636164662540etargetblank3a82995a" class="panel-collapse collapse">
 <div class="panel-body">
 <p>
 Great! You are using Git for version control. Tracking code development and connecting the code version to the results is critical for reproducibility.
 </p>
 <p>
-The results in this page were generated with repository version <a href="https://gitlab.com/dkillian/bpps/tree/7c4a803a761ad9af6335ca4f08d93f64422a8209" target="_blank">7c4a803</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
+The results in this page were generated with repository version <a href="https://gitlab.com/dkillian/bpps/tree/3a8299500b1c5a52513ae595934636164662540e" target="_blank">3a82995</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
 </p>
 <p>
 Note that you need to be careful to ensure that all relevant files for the analysis have been committed to Git prior to generating the results (you can use <code>wflow_publish</code> or <code>wflow_git_commit</code>). workflowr only checks the R Markdown file, but you know if there are other scripts or data files that it depends on. Below is the status of the Git repository when the results were generated:
@@ -481,15 +486,16 @@ Ignored files:
     Ignored:    analysis/frequencies_cache/
     Ignored:    analysis/module-B_cache/
     Ignored:    analysis/module-C_cache/
+    Ignored:    analysis/module-E_cache/
     Ignored:    analysis/univariate-frequencies_cache/
 
 Untracked files:
+    Untracked:  analysis/module-E.Rmd
+    Untracked:  code/bpps univariate freq function.R
     Untracked:  code/djk workflowr commands.R
+    Untracked:  data/~$BPPS hh instrument pre-codebook.xlsx
     Untracked:  temp/
     Untracked:  univariate-frequencies_cache/
-
-Unstaged changes:
-    Modified:   analysis/module-C.Rmd
 
 </code></pre>
 <p>
@@ -528,6 +534,57 @@ Message
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+Rmd
+</td>
+<td>
+<a href="https://gitlab.com/dkillian/bpps/blob/3a8299500b1c5a52513ae595934636164662540e/analysis/descriptives.Rmd" target="_blank">3a82995</a>
+</td>
+<td>
+dkillian
+</td>
+<td>
+2020-12-16
+</td>
+<td>
+Started module E. Governance
+</td>
+</tr>
+<tr>
+<td>
+Rmd
+</td>
+<td>
+<a href="https://gitlab.com/dkillian/bpps/blob/a6e1808fe40a7f6d6eca93f6c9aace2c097922f8/analysis/descriptives.Rmd" target="_blank">a6e1808</a>
+</td>
+<td>
+dkillian
+</td>
+<td>
+2020-12-16
+</td>
+<td>
+tried to add navigation bar to descriptives file, updated some of module C
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://glcdn.githack.com/dkillian/bpps/raw/135f71006e597b98e108a7a73e53717edbe7bbe8/public/descriptives.html" target="_blank">135f710</a>
+</td>
+<td>
+dkillian
+</td>
+<td>
+2020-12-16
+</td>
+<td>
+Build site.
+</td>
+</tr>
 <tr>
 <td>
 Rmd
@@ -739,7 +796,6 @@ wflow_publish(“analysis/descriptives.Rmd”)
 </div>
 </div>
 </div>
-<p>navbar: title: USAID Baseline Public Perception Survey left: - text: Home href: index.html - text: About href: about.html - text: Methods href: methods.html - text: Descriptive statistics href: descriptives.html - text: Exploratory analyses href: explore.html - text: License href: license.html right: - icon: fa-gitlab text: Source code href: <a href="https://gitlab.com/dkillian/bpps" class="uri">https://gitlab.com/dkillian/bpps</a> output: workflowr::wflow_html: toc: yes toc_float: yes theme: flatly highlight: textmate</p>
 <div id="introduction" class="section level2">
 <h2>Introduction</h2>
 <p>This section reviews the raw frequencies and means of the BPPS survey data. The following files explore each survey module.</p>
@@ -750,22 +806,14 @@ wflow_publish(“analysis/descriptives.Rmd”)
 <p><a href="frequencies.html">frequencies</a></p>
 <p><a href="module-A.html">Survey management</a></p>
 <p><a href="demographics.html">Demographics</a></p>
-<div id="awareness-of-usaid" class="section level3">
-<h3><a href="module-B.html">Awareness of USAID</a></h3>
-</div>
-<div id="media" class="section level3">
-<h3><a href="module-C.html">Media</a></h3>
-</div>
-<div id="donor-activity" class="section level3">
-<h3><a href="module-D.html">Donor activity</a></h3>
-</div>
-<div id="governance" class="section level3">
-<h3><a href="module-E.html">Governance</a></h3>
+<p><a href="module-B.html">Awareness of USAID</a></p>
+<p><a href="module-C.html">Media</a></p>
+<p><a href="module-D.html">Donor activity</a></p>
+<p><a href="module-E.html">Governance</a></p>
 <p><a href="module-F.html">Corruption</a></p>
 <p><a href="module-G.html">Security</a></p>
 <p><a href="module-H.html">COVID-19</a></p>
 <p><a href="module-I.html">Households</a></p>
-</div>
 </div>
 
 

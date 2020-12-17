@@ -436,7 +436,7 @@ div.tocify {
 <strong>Last updated:</strong> 2020-12-16
 </p>
 <p>
-<strong>Checks:</strong> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> 5 <span class="glyphicon glyphicon-exclamation-sign text-danger" aria-hidden="true"></span> 2
+<strong>Checks:</strong> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> 6 <span class="glyphicon glyphicon-exclamation-sign text-danger" aria-hidden="true"></span> 1
 </p>
 <p>
 <strong>Knit directory:</strong> <code>USAID Baseline Public Perception Survey/</code> <span class="glyphicon glyphicon-question-sign" aria-hidden="true" title="This is the local directory in which the code in this file was executed."> </span>
@@ -452,12 +452,12 @@ This reproducible <a href="http://rmarkdown.rstudio.com">R Markdown</a> analysis
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRMarkdownfilestronguncommittedchanges"> <span class="glyphicon glyphicon-exclamation-sign text-danger" aria-hidden="true"></span> <strong>R Markdown file:</strong> uncommitted changes </a>
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRMarkdownfilestronguptodate"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>R Markdown file:</strong> up-to-date </a>
 </p>
 </div>
-<div id="strongRMarkdownfilestronguncommittedchanges" class="panel-collapse collapse">
+<div id="strongRMarkdownfilestronguptodate" class="panel-collapse collapse">
 <div class="panel-body">
-<p>The R Markdown file has unstaged changes. To know which version of the R Markdown file created these results, you’ll want to first commit it to the Git repo. If you’re still working on the analysis, you can ignore this warning. When you’re finished, you can run <code>wflow_publish</code> to commit the R Markdown file and build the HTML.</p>
+<p>Great! Since the R Markdown file has been committed to the Git repository, you know the exact version of the code that produced these results.</p>
 </div>
 </div>
 </div>
@@ -509,6 +509,9 @@ The following chunks had caches available:
 <ul>
 <li>
 session-info-chunk-inserted-by-workflowr
+</li>
+<li>
+unnamed-chunk-1
 </li>
 <li>
 unnamed-chunk-10
@@ -704,16 +707,16 @@ unnamed-chunk-9
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgitlabcomdkillianbppstree135f71006e597b98e108a7a73e53717edbe7bbe8targetblank135f710a"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://gitlab.com/dkillian/bpps/tree/135f71006e597b98e108a7a73e53717edbe7bbe8" target="_blank">135f710</a> </a>
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgitlabcomdkillianbppstree3a8299500b1c5a52513ae595934636164662540etargetblank3a82995a"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://gitlab.com/dkillian/bpps/tree/3a8299500b1c5a52513ae595934636164662540e" target="_blank">3a82995</a> </a>
 </p>
 </div>
-<div id="strongRepositoryversionstrongahrefhttpsgitlabcomdkillianbppstree135f71006e597b98e108a7a73e53717edbe7bbe8targetblank135f710a" class="panel-collapse collapse">
+<div id="strongRepositoryversionstrongahrefhttpsgitlabcomdkillianbppstree3a8299500b1c5a52513ae595934636164662540etargetblank3a82995a" class="panel-collapse collapse">
 <div class="panel-body">
 <p>
 Great! You are using Git for version control. Tracking code development and connecting the code version to the results is critical for reproducibility.
 </p>
 <p>
-The results in this page were generated with repository version <a href="https://gitlab.com/dkillian/bpps/tree/135f71006e597b98e108a7a73e53717edbe7bbe8" target="_blank">135f710</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
+The results in this page were generated with repository version <a href="https://gitlab.com/dkillian/bpps/tree/3a8299500b1c5a52513ae595934636164662540e" target="_blank">3a82995</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
 </p>
 <p>
 Note that you need to be careful to ensure that all relevant files for the analysis have been committed to Git prior to generating the results (you can use <code>wflow_publish</code> or <code>wflow_git_commit</code>). workflowr only checks the R Markdown file, but you know if there are other scripts or data files that it depends on. Below is the status of the Git repository when the results were generated:
@@ -726,15 +729,15 @@ Ignored files:
     Ignored:    analysis/frequencies_cache/
     Ignored:    analysis/module-B_cache/
     Ignored:    analysis/module-C_cache/
+    Ignored:    analysis/module-E_cache/
     Ignored:    analysis/univariate-frequencies_cache/
 
 Untracked files:
+    Untracked:  analysis/module-E.Rmd
+    Untracked:  code/bpps univariate freq function.R
     Untracked:  code/djk workflowr commands.R
     Untracked:  temp/
     Untracked:  univariate-frequencies_cache/
-
-Unstaged changes:
-    Modified:   analysis/module-C.Rmd
 
 </code></pre>
 <p>
@@ -773,6 +776,40 @@ Message
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+Rmd
+</td>
+<td>
+<a href="https://gitlab.com/dkillian/bpps/blob/a6e1808fe40a7f6d6eca93f6c9aace2c097922f8/analysis/module-C.Rmd" target="_blank">a6e1808</a>
+</td>
+<td>
+dkillian
+</td>
+<td>
+2020-12-16
+</td>
+<td>
+tried to add navigation bar to descriptives file, updated some of module C
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://glcdn.githack.com/dkillian/bpps/raw/a6e1808fe40a7f6d6eca93f6c9aace2c097922f8/public/module-C.html" target="_blank">a6e1808</a>
+</td>
+<td>
+dkillian
+</td>
+<td>
+2020-12-16
+</td>
+<td>
+tried to add navigation bar to descriptives file, updated some of module C
+</td>
+</tr>
 <tr>
 <td>
 Rmd
