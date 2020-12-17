@@ -1,0 +1,282 @@
+---
+title: "module-E"
+author: "dkillian"
+date: "2020-12-16"
+output: workflowr::wflow_html
+editor_options:
+  chunk_output_type: console
+---
+
+#####
+
+```{r global_options, include=F, warning=F, message=F, echo=F, error=F}
+
+# standard figure size and generate clean output
+knitr::opts_chunk$set(fig.width=10, fig.height=8, warning=FALSE, message=FALSE, cache=TRUE, error=T, echo=F)
+
+```
+
+```{r, include=F, warning=F, message=F, echo=F, error=F}
+#source("code/00 BPPS - workflowr prep.R")
+
+packages <- c("arm", "BMA", "brms", "corrplot", "dummies","DescTools", "estimatr","extrafont", "extrafontdb", "janitor", "reshape2","tidyr","broom", "haven", "HH","Hmisc","lubridate","knitr", "margins", "magrittr", "plotrix", "scales","survey", "srvyr", "sysfonts", "foreign","car", "ICC", "PowerUpR", "openxlsx", "ggrepel", "readr", "readxl", "sjmisc", "sjPlot", "sjstats", "sjlabelled", "skimr","labelled", "texreg", "janitor","psych","dplyr", "tidyverse", "bbplot", "viridis", "here", "ggridges", "ggthemes", "DT", "jtools", "huxtable", "stringi", "gghighlight", "plm", "rethinking" , "brms", "rstan", "rstanarm","tidybayes","texreg","gt","gtsummary","huxtable","stargazer", "gsynth", "panelView", "assertr", "pointblank", "validate", "sandwich", "knitr", "kableExtra", "formattable")
+
+lapply(packages, library, character.only=T)
+
+font_add_google("Source Sans Pro", "sans-serif")
+
+options(digits=4, scipen=6)
+
+# set default
+theme_set(theme_bw() + theme(panel.grid.minor.x=element_blank(),
+                             panel.grid.minor.y=element_blank(),
+                             plot.title=element_text(face="bold",size=18, hjust=.5, family = "Source Sans Pro"),
+                             plot.subtitle = element_text(size=16, family="Source Sans Pro"),
+                             plot.caption=element_text(size=12, family="Source Sans Pro"),
+                             axis.title=element_text(size=16, family="Source Sans Pro"),
+                             axis.text=element_text(size=14, family="Source Sans Pro"),    
+                             legend.text=element_text(size=14, family="Source Sans Pro"),
+                             strip.text=element_text(size=14, family="Source Sans Pro"))) 
+
+
+# without border
+base_style <- function(){theme_bw() +
+    theme(panel.grid.minor.x=element_blank(),
+          panel.grid.minor.y=element_blank(),
+          plot.title=element_text(face="bold",size=18, hjust=.5, family = "Source Sans Pro"),
+          plot.subtitle = element_text(size=16, family="Source Sans Pro"),
+          plot.caption=element_text(size=12, family="Source Sans Pro"),
+          axis.title=element_text(size=16, family="Source Sans Pro"),
+          axis.text=element_text(size=14, family="Source Sans Pro"),    
+          legend.text=element_text(size=14, family="Source Sans Pro"),
+          strip.text=element_text(size=14, family="Source Sans Pro"),
+          panel.border=element_blank(),
+          axis.ticks = element_blank()) 
+}
+
+# path <- "../BPPS analysis/data/BPPS hh instrument pre-codebook.xlsx"
+path <- "data/BPPS hh instrument pre-codebook.xlsx"
+
+
+labs <- path %>%
+  excel_sheets() %>%
+  set_names() %>%
+  lapply(function(x) read_xlsx(x, path=path))
+
+lablist <- names(labs) %>%
+  as.data.frame()
+
+yes <- labs$yes_no
+agree4 <- labs$agree4
+
+# dat <- read_rds("../BPPS analysis/data/prepared/BPPS prepared.rds")
+dat <- read_rds("data/prepared/BPPS prepared.rds")
+
+svydat <- svydesign(data = dat,
+                    ids= ~PSU + A9,
+                    strata = ~strata,
+                    weights = ~Wgt1)
+
+
+svyrdat <- dat %>%
+  as_survey_design(ids= PSU,
+                   strata=strata,
+                   weights=Wgt1)
+```
+
+
+### E1. Overall, based on your experience, do you think things in Afghanistan today are going in the right direction, or do you think they are going in the wrong direction?  
+
+```{r}
+direction <- labs$direction
+
+#frq(dat$E1)
+
+e1 <- svyrdat %>%
+  group_by(E1) %>%
+  summarise(proportion = survey_mean(),
+            total = survey_total()) %>%
+  as.data.frame() %>%
+  left_join(direction,
+            by=c("E1" = "direction")) %>%
+  mutate(Percent=proportion,
+         `Margin of error` = 1.96*proportion_se,
+         Sample=round(total,0)) %>%
+  select(Response=direction_lab, 
+         Percent,
+         `Margin of error`,
+         Sample) %>%
+  gt() %>%
+  fmt_percent(vars(Percent, `Margin of error`),
+              decimals=1) %>%
+  fmt_number(vars(Sample),
+             decimals=0) %>%
+  tab_header("E1. Direction of Afghanistan") %>%
+  tab_source_note()
+
+e1
+
+```
+
+### E2. Thinking of the different levels of government in Afghanistan, do you think that overall the [level of government] is doing a very bad job, somewhat bad job, somewhat good job, or a very good job? 
+
+#### a. National government
+
+```{r}
+job <- labs$job
+job
+
+#frq(dat$E2a)
+
+e2a <- svyrdat %>%
+  group_by(E2a) %>%
+  summarise(proportion = survey_mean(),
+            total = survey_total()) %>%
+  as.data.frame() %>%
+  left_join(job,
+            by=c("E2a" = "job")) %>%
+  mutate(Percent=proportion,
+         `Margin of error` = 1.96*proportion_se,
+         Sample=round(total,0)) %>%
+  select(Response=job_lab, 
+         Percent,
+         `Margin of error`,
+         Sample) %>%
+  gt() %>%
+  fmt_percent(vars(Percent, `Margin of error`),
+              decimals=1) %>%
+  fmt_number(vars(Sample),
+             decimals=0) %>%
+  tab_header("a) National government performance") 
+
+e2a
+
+```
+#### b. Provincial government
+
+```{r}
+#job <- labs$job
+
+
+#frq(dat$E2a)
+
+e2b <- svyrdat %>%
+  group_by(E2b) %>%
+  summarise(proportion = survey_mean(),
+            total = survey_total()) %>%
+  as.data.frame() %>%
+  left_join(job,
+            by=c("E2b" = "job")) %>%
+  mutate(Percent=proportion,
+         `Margin of error` = 1.96*proportion_se,
+         Sample=round(total,0)) %>%
+  select(Response=job_lab, 
+         Percent,
+         `Margin of error`,
+         Sample) %>%
+  gt() %>%
+  fmt_percent(vars(Percent, `Margin of error`),
+              decimals=1) %>%
+  fmt_number(vars(Sample),
+             decimals=0) %>%
+  tab_header("a) Provincial government performance") 
+
+e2b
+
+```
+
+#### c. District government
+
+```{r}
+
+#frq(dat$E2c)
+
+e2c <- svyrdat %>%
+  group_by(E2c) %>%
+  summarise(proportion = survey_mean(),
+            total = survey_total()) %>%
+  as.data.frame() %>%
+  left_join(job,
+            by=c("E2c" = "job")) %>%
+  mutate(Percent=proportion,
+         `Margin of error` = 1.96*proportion_se,
+         Sample=round(total,0)) %>%
+  select(Response=job_lab, 
+         Percent,
+         `Margin of error`,
+         Sample) %>%
+  gt() %>%
+  fmt_percent(vars(Percent, `Margin of error`),
+              decimals=1) %>%
+  fmt_number(vars(Sample),
+             decimals=0) %>%
+  tab_header("a) District government performance") 
+
+e2c
+
+```
+### E3. Are you aware of the peace agreement signed between the US Government and the Taliban in February of 2020? 
+
+```{r}
+
+#frq(dat$E3)
+
+e3 <- svyrdat %>%
+  group_by(E3) %>%
+  summarise(proportion = survey_mean(),
+            total = survey_total()) %>%
+  as.data.frame() %>%
+  left_join(yes,
+            by=c("E3" = "yes_no_code")) %>%
+  mutate(Percent=proportion,
+         `Margin of error` = 1.96*proportion_se,
+         Sample=round(total,0)) %>%
+  select(Response, 
+         Percent,
+         `Margin of error`,
+         Sample) %>%
+  gt() %>%
+  fmt_percent(vars(Percent, `Margin of error`),
+              decimals=1) %>%
+  fmt_number(vars(Sample),
+             decimals=0) %>%
+  tab_header("E3. Aware of US-Taliban peace agreement") 
+
+e3
+
+```
+
+### E4. As a result of implementation of the peace agreement between the USG and Taliban, do you think security in your area has worsened, remained the same, or improved? 
+
+```{r}
+better <- labs$better
+better
+
+#frq(dat$E2a)
+
+e4 <- svyrdat %>%
+  group_by(E4) %>%
+  summarise(proportion = survey_mean(),
+            total = survey_total()) %>%
+  as.data.frame() %>%
+  filter(E4!=97) %>%
+  left_join(better,
+            by=c("E4" = "better_code")) %>%
+  mutate(Percent=proportion,
+         `Margin of error` = 1.96*proportion_se,
+         Sample=round(total,0)) %>%
+  select(Response=better_lab, 
+         Percent,
+         `Margin of error`,
+         Sample) %>%
+  gt() %>%
+  fmt_percent(vars(Percent, `Margin of error`),
+              decimals=1) %>%
+  fmt_number(vars(Sample),
+             decimals=0) %>%
+  tab_header("E4. Security after USG-Taliban peace agreement") %>%
+  tab_source_note("For n=5,252 (73.7%) who are aware of the agreement")
+
+e4
+
+```
