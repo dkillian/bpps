@@ -595,6 +595,7 @@ c11
 ### C12. About how often do you engage with friends and family on social networking sites about social or political issues?
 
 ```{r}
+rate <- labs$rate
 c12 <- svyrdat %>%
   group_by(C12) %>%
   summarise(proportion = survey_mean(),
@@ -1016,7 +1017,7 @@ c13_16
 ### C14. In the past year, how often have you visited the website or social networking page of any government office or ministry? 
 
 ```{r}
-
+rate <- labs$rate
 c14 <- svyrdat %>%
   group_by(C14) %>%
   summarise(proportion = survey_mean(),
@@ -1554,6 +1555,7 @@ c16
 ### C17. Regarding the USAID message or messages that you described, would you say that you have a very negative or positive impression of the message or messages? Is that somewhat or very negative or positive impression?
 
 ```{r}
+positive <- labs$postive_negative
 c17 <- svyrdat %>%
   group_by(C17) %>%
   summarise(proportion = survey_mean(),
