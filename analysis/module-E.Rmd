@@ -87,6 +87,7 @@ svyrdat <- dat %>%
 
 ### E1. Overall, based on your experience, do you think things in Afghanistan today are going in the right direction, or do you think they are going in the wrong direction?  
 
+
 ```{r}
 direction <- labs$direction
 
@@ -118,13 +119,14 @@ e1
 
 ```
 
+
 ### E2. Thinking of the different levels of government in Afghanistan, do you think that overall the [level of government] is doing a very bad job, somewhat bad job, somewhat good job, or a very good job? 
 
 #### a. National government
 
 ```{r}
 job <- labs$job
-job
+#job
 
 #frq(dat$E2a)
 
@@ -152,11 +154,12 @@ e2a <- svyrdat %>%
 e2a
 
 ```
+
+
 #### b. Provincial government
 
 ```{r}
 #job <- labs$job
-
 
 #frq(dat$E2a)
 
@@ -185,7 +188,9 @@ e2b
 
 ```
 
+
 #### c. District government
+
 
 ```{r}
 
@@ -215,7 +220,10 @@ e2c <- svyrdat %>%
 e2c
 
 ```
+
+
 ### E3. Are you aware of the peace agreement signed between the US Government and the Taliban in February of 2020? 
+
 
 ```{r}
 
@@ -246,11 +254,13 @@ e3
 
 ```
 
+
 ### E4. As a result of implementation of the peace agreement between the USG and Taliban, do you think security in your area has worsened, remained the same, or improved? 
+
 
 ```{r}
 better <- labs$better
-better
+#better
 
 #frq(dat$E2a)
 
@@ -280,3 +290,155 @@ e4 <- svyrdat %>%
 e4
 
 ```
+
+
+### E5. As a result of the implementation of the peace agreement between the USG and Taliban, do you think that USAID support for the development of Afghanistan has decreased, remained the same, or increased? 
+
+
+```{r}
+increase <- labs$increase
+#increase
+
+#frq(dat$E2a)
+
+e5 <- svyrdat %>%
+  group_by(E5) %>%
+  summarise(proportion = survey_mean(),
+            total = survey_total()) %>%
+  as.data.frame() %>%
+  filter(E5!=97) %>%
+  left_join(increase,
+            by=c("E5" = "peace_support")) %>%
+  mutate(Percent=proportion,
+         `Margin of error` = 1.96*proportion_se,
+         Sample=round(total,0)) %>%
+  select(Response=increase_lab, 
+         Percent,
+         `Margin of error`,
+         Sample) %>%
+  gt() %>%
+  fmt_percent(vars(Percent, `Margin of error`),
+              decimals=1) %>%
+  fmt_number(vars(Sample),
+             decimals=0) %>%
+  tab_header("E5. USAID support after US-Taliban peace agreement") %>%
+  tab_source_note("For n=5,252 (73.7%) who are aware of the agreement")
+
+e5
+
+```
+
+
+### E6. As a result of implementation of the peace agreement between the USG and Taliban, would you say that you are pessimistic or optimistic about the future of Afghanistan?
+
+
+```{r}
+opt <- labs$optimism
+#opt
+
+#frq(dat$E2a)
+
+e6 <- svyrdat %>%
+  group_by(E6) %>%
+  summarise(proportion = survey_mean(),
+            total = survey_total()) %>%
+  as.data.frame() %>%
+  filter(E6!=97) %>%
+  left_join(opt,
+            by=c("E6" = "optimism_code")) %>%
+  mutate(Percent=proportion,
+         `Margin of error` = 1.96*proportion_se,
+         Sample=round(total,0)) %>%
+  select(Response=optimism_lab, 
+         Percent,
+         `Margin of error`,
+         Sample) %>%
+  gt() %>%
+  fmt_percent(vars(Percent, `Margin of error`),
+              decimals=1) %>%
+  fmt_number(vars(Sample),
+             decimals=0) %>%
+  tab_header("E6. Outlook on Afghanistan after US-Taliban agreement") %>%
+  tab_source_note("For n=5,252 (73.7%) who are aware of the agreement")
+
+e6
+
+```
+
+
+### E7. As a result of implementation of the peace agreement between the U.S. Government and the Taliban, would you say that the Taliban have become less influential or more influential in the governance of Afghanistan? 
+
+
+```{r}
+inf <- labs$influential
+#inf
+
+#frq(dat$E2a)
+
+e7 <- svyrdat %>%
+  group_by(E7) %>%
+  summarise(proportion = survey_mean(),
+            total = survey_total()) %>%
+  as.data.frame() %>%
+  filter(E7!=97) %>%
+  left_join(inf,
+            by=c("E7" = "peace_influential")) %>%
+  mutate(Percent=proportion,
+         `Margin of error` = 1.96*proportion_se,
+         Sample=round(total,0)) %>%
+  select(Response=influential_lab, 
+         Percent,
+         `Margin of error`,
+         Sample) %>%
+  gt() %>%
+  fmt_percent(vars(Percent, `Margin of error`),
+              decimals=1) %>%
+  fmt_number(vars(Sample),
+             decimals=0) %>%
+  tab_header("E7. Taliban influence after US-Taliban peace agreement") %>%
+  tab_source_note("For n=5,252 (73.7%) who are aware of the agreement")
+
+e7
+
+```
+
+
+### E8. The peace agreement between the US and Taliban calls for direct negotiations between the Taliban and the Government of Afghanistan. Are you pessimistic or optimistic that the Government of Afghanistan and the Taliban will be able to negotiate a peace agreement?
+
+
+```{r}
+#increase <- labs$increase
+#increase
+
+#frq(dat$E2a)
+
+e8 <- svyrdat %>%
+  group_by(E8) %>%
+  summarise(proportion = survey_mean(),
+            total = survey_total()) %>%
+  as.data.frame() %>%
+  filter(E8!=97) %>%
+  left_join(opt,
+            by=c("E8" = "optimism_code")) %>%
+  mutate(Percent=proportion,
+         `Margin of error` = 1.96*proportion_se,
+         Sample=round(total,0)) %>%
+  select(Response=optimism_lab, 
+         Percent,
+         `Margin of error`,
+         Sample) %>%
+  gt() %>%
+  fmt_percent(vars(Percent, `Margin of error`),
+              decimals=1) %>%
+  fmt_number(vars(Sample),
+             decimals=0) %>%
+  tab_header("E8. Prospects for GIRoA-Taliban peace agreement") %>%
+  tab_source_note("For n=5,252 (73.7%) who are aware of the agreement")
+
+e8
+
+```
+
+
+
+
