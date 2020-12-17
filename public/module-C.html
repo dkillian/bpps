@@ -693,16 +693,16 @@ unnamed-chunk-9
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgitlabcomdkillianbppstreea0369a233bfcfee1ed1118de57e520dd7b7ec89ftargetblanka0369a2a"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://gitlab.com/dkillian/bpps/tree/a0369a233bfcfee1ed1118de57e520dd7b7ec89f" target="_blank">a0369a2</a> </a>
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgitlabcomdkillianbppstree3372723cd0071458c282f991907ff1d4b02d506etargetblank3372723a"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://gitlab.com/dkillian/bpps/tree/3372723cd0071458c282f991907ff1d4b02d506e" target="_blank">3372723</a> </a>
 </p>
 </div>
-<div id="strongRepositoryversionstrongahrefhttpsgitlabcomdkillianbppstreea0369a233bfcfee1ed1118de57e520dd7b7ec89ftargetblanka0369a2a" class="panel-collapse collapse">
+<div id="strongRepositoryversionstrongahrefhttpsgitlabcomdkillianbppstree3372723cd0071458c282f991907ff1d4b02d506etargetblank3372723a" class="panel-collapse collapse">
 <div class="panel-body">
 <p>
 Great! You are using Git for version control. Tracking code development and connecting the code version to the results is critical for reproducibility.
 </p>
 <p>
-The results in this page were generated with repository version <a href="https://gitlab.com/dkillian/bpps/tree/a0369a233bfcfee1ed1118de57e520dd7b7ec89f" target="_blank">a0369a2</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
+The results in this page were generated with repository version <a href="https://gitlab.com/dkillian/bpps/tree/3372723cd0071458c282f991907ff1d4b02d506e" target="_blank">3372723</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
 </p>
 <p>
 Note that you need to be careful to ensure that all relevant files for the analysis have been committed to Git prior to generating the results (you can use <code>wflow_publish</code> or <code>wflow_git_commit</code>). workflowr only checks the R Markdown file, but you know if there are other scripts or data files that it depends on. Below is the status of the Git repository when the results were generated:
@@ -757,6 +757,40 @@ Message
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+Rmd
+</td>
+<td>
+<a href="https://gitlab.com/dkillian/bpps/blob/3372723cd0071458c282f991907ff1d4b02d506e/analysis/module-C.Rmd" target="_blank">3372723</a>
+</td>
+<td>
+dkillian
+</td>
+<td>
+2020-12-17
+</td>
+<td>
+wflow_publish(“analysis/module-C.Rmd”)
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://glcdn.githack.com/dkillian/bpps/raw/ba4e58dfe936c77c2521978f646e4900df0b5ec3/public/module-C.html" target="_blank">ba4e58d</a>
+</td>
+<td>
+dkillian
+</td>
+<td>
+2020-12-17
+</td>
+<td>
+Build site.
+</td>
+</tr>
 <tr>
 <td>
 html
@@ -1743,37 +1777,11 @@ ggplot(a, aes(x)) +
 </div>
 <div id="c3.-how-many-hours-in-a-day-do-you-listen-to-radio-programs" class="section level3">
 <h3>C3. How many hours in a day do you listen to radio programs?</h3>
-<pre><code>
-How many hours in a day do you listen to radio programs? (x) &lt;numeric&gt;
-# total N=7128  valid N=7128  mean=53.64  sd=46.73
-
-Value |            Label |    N | Raw % | Valid % | Cum. %
-----------------------------------------------------------
-    1 |                1 |  718 | 10.07 |   10.07 |  10.07
-    2 |                2 |  917 | 12.86 |   12.86 |  22.94
-    3 |                3 |  557 |  7.81 |    7.81 |  30.75
-    4 |                4 |  356 |  4.99 |    4.99 |  35.75
-    5 |                5 |  186 |  2.61 |    2.61 |  38.36
-    6 |                6 |  175 |  2.46 |    2.46 |  40.81
-    7 |                7 |   63 |  0.88 |    0.88 |  41.69
-    8 |                8 |  117 |  1.64 |    1.64 |  43.34
-    9 |                9 |   36 |  0.51 |    0.51 |  43.84
-   10 |               10 |  129 |  1.81 |    1.81 |  45.65
-   11 |               11 |    5 |  0.07 |    0.07 |  45.72
-   12 |               12 |   33 |  0.46 |    0.46 |  46.18
-   13 |               13 |    6 |  0.08 |    0.08 |  46.27
-   14 |               14 |    2 |  0.03 |    0.03 |  46.30
-   15 |               15 |    3 |  0.04 |    0.04 |  46.34
-   97 |               NA | 3775 | 52.96 |   52.96 |  99.30
-   98 |    Refused (vol) |    0 |  0.00 |    0.00 |  99.30
-   99 | Don&#39;t know (vol) |   50 |  0.70 |    0.70 | 100.00
- &lt;NA&gt; |             &lt;NA&gt; |    0 |  0.00 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
-<pre><code>[1] &quot;hour_code&quot; &quot;hour_lab&quot; </code></pre>
 <style>html {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
 }
 
-#xotwtlcjbc .gt_table {
+#ddcnjwfxfi .gt_table {
   display: table;
   border-collapse: collapse;
   margin-left: auto;
@@ -1798,7 +1806,7 @@ Value |            Label |    N | Raw % | Valid % | Cum. %
   border-left-color: #D3D3D3;
 }
 
-#xotwtlcjbc .gt_heading {
+#ddcnjwfxfi .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -1810,7 +1818,7 @@ Value |            Label |    N | Raw % | Valid % | Cum. %
   border-right-color: #D3D3D3;
 }
 
-#xotwtlcjbc .gt_title {
+#ddcnjwfxfi .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -1820,7 +1828,7 @@ Value |            Label |    N | Raw % | Valid % | Cum. %
   border-bottom-width: 0;
 }
 
-#xotwtlcjbc .gt_subtitle {
+#ddcnjwfxfi .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1830,13 +1838,13 @@ Value |            Label |    N | Raw % | Valid % | Cum. %
   border-top-width: 0;
 }
 
-#xotwtlcjbc .gt_bottom_border {
+#ddcnjwfxfi .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#xotwtlcjbc .gt_col_headings {
+#ddcnjwfxfi .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1851,7 +1859,7 @@ Value |            Label |    N | Raw % | Valid % | Cum. %
   border-right-color: #D3D3D3;
 }
 
-#xotwtlcjbc .gt_col_heading {
+#ddcnjwfxfi .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1871,7 +1879,7 @@ Value |            Label |    N | Raw % | Valid % | Cum. %
   overflow-x: hidden;
 }
 
-#xotwtlcjbc .gt_column_spanner_outer {
+#ddcnjwfxfi .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1883,15 +1891,15 @@ Value |            Label |    N | Raw % | Valid % | Cum. %
   padding-right: 4px;
 }
 
-#xotwtlcjbc .gt_column_spanner_outer:first-child {
+#ddcnjwfxfi .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#xotwtlcjbc .gt_column_spanner_outer:last-child {
+#ddcnjwfxfi .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#xotwtlcjbc .gt_column_spanner {
+#ddcnjwfxfi .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1903,7 +1911,7 @@ Value |            Label |    N | Raw % | Valid % | Cum. %
   width: 100%;
 }
 
-#xotwtlcjbc .gt_group_heading {
+#ddcnjwfxfi .gt_group_heading {
   padding: 8px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1925,7 +1933,7 @@ Value |            Label |    N | Raw % | Valid % | Cum. %
   vertical-align: middle;
 }
 
-#xotwtlcjbc .gt_empty_group_heading {
+#ddcnjwfxfi .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1940,15 +1948,15 @@ Value |            Label |    N | Raw % | Valid % | Cum. %
   vertical-align: middle;
 }
 
-#xotwtlcjbc .gt_from_md > :first-child {
+#ddcnjwfxfi .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#xotwtlcjbc .gt_from_md > :last-child {
+#ddcnjwfxfi .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#xotwtlcjbc .gt_row {
+#ddcnjwfxfi .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1967,7 +1975,7 @@ Value |            Label |    N | Raw % | Valid % | Cum. %
   overflow-x: hidden;
 }
 
-#xotwtlcjbc .gt_stub {
+#ddcnjwfxfi .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1979,7 +1987,7 @@ Value |            Label |    N | Raw % | Valid % | Cum. %
   padding-left: 12px;
 }
 
-#xotwtlcjbc .gt_summary_row {
+#ddcnjwfxfi .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1989,7 +1997,7 @@ Value |            Label |    N | Raw % | Valid % | Cum. %
   padding-right: 5px;
 }
 
-#xotwtlcjbc .gt_first_summary_row {
+#ddcnjwfxfi .gt_first_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1999,7 +2007,7 @@ Value |            Label |    N | Raw % | Valid % | Cum. %
   border-top-color: #D3D3D3;
 }
 
-#xotwtlcjbc .gt_grand_summary_row {
+#ddcnjwfxfi .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2009,7 +2017,7 @@ Value |            Label |    N | Raw % | Valid % | Cum. %
   padding-right: 5px;
 }
 
-#xotwtlcjbc .gt_first_grand_summary_row {
+#ddcnjwfxfi .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2019,11 +2027,11 @@ Value |            Label |    N | Raw % | Valid % | Cum. %
   border-top-color: #D3D3D3;
 }
 
-#xotwtlcjbc .gt_striped {
+#ddcnjwfxfi .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#xotwtlcjbc .gt_table_body {
+#ddcnjwfxfi .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2032,7 +2040,7 @@ Value |            Label |    N | Raw % | Valid % | Cum. %
   border-bottom-color: #D3D3D3;
 }
 
-#xotwtlcjbc .gt_footnotes {
+#ddcnjwfxfi .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2046,13 +2054,13 @@ Value |            Label |    N | Raw % | Valid % | Cum. %
   border-right-color: #D3D3D3;
 }
 
-#xotwtlcjbc .gt_footnote {
+#ddcnjwfxfi .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding: 4px;
 }
 
-#xotwtlcjbc .gt_sourcenotes {
+#ddcnjwfxfi .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2066,46 +2074,46 @@ Value |            Label |    N | Raw % | Valid % | Cum. %
   border-right-color: #D3D3D3;
 }
 
-#xotwtlcjbc .gt_sourcenote {
+#ddcnjwfxfi .gt_sourcenote {
   font-size: 90%;
   padding: 4px;
 }
 
-#xotwtlcjbc .gt_left {
+#ddcnjwfxfi .gt_left {
   text-align: left;
 }
 
-#xotwtlcjbc .gt_center {
+#ddcnjwfxfi .gt_center {
   text-align: center;
 }
 
-#xotwtlcjbc .gt_right {
+#ddcnjwfxfi .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#xotwtlcjbc .gt_font_normal {
+#ddcnjwfxfi .gt_font_normal {
   font-weight: normal;
 }
 
-#xotwtlcjbc .gt_font_bold {
+#ddcnjwfxfi .gt_font_bold {
   font-weight: bold;
 }
 
-#xotwtlcjbc .gt_font_italic {
+#ddcnjwfxfi .gt_font_italic {
   font-style: italic;
 }
 
-#xotwtlcjbc .gt_super {
+#ddcnjwfxfi .gt_super {
   font-size: 65%;
 }
 
-#xotwtlcjbc .gt_footnote_marks {
+#ddcnjwfxfi .gt_footnote_marks {
   font-style: italic;
   font-size: 65%;
 }
 </style>
-<div id="xotwtlcjbc" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;"><table class="gt_table">
+<div id="ddcnjwfxfi" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;"><table class="gt_table">
   
   <thead class="gt_col_headings">
     <tr>
@@ -2227,447 +2235,11 @@ Value |            Label |    N | Raw % | Valid % | Cum. %
 <h3>C4. Which radio stations do you listen to most often?</h3>
 <div id="first-mention" class="section level4">
 <h4>First mention</h4>
-<pre><code>
-Which radio stations do you listen to most often? (First Mention) (x) &lt;numeric&gt;
-# total N=7128  valid N=7128  mean=60.63  sd=42.43
-
-Value |                  Label |    N | Raw % | Valid % | Cum. %
-----------------------------------------------------------------
-    1 |         Radio Arman FM |  652 |  9.15 |    9.15 |   9.15
-    2 |            Radio Ashna |   87 |  1.22 |    1.22 |  10.37
-    3 |       Radio Ghaznawian |   71 |  1.00 |    1.00 |  11.36
-    4 |           Radio Shamla |   10 |  0.14 |    0.14 |  11.50
-    5 |              Radio BBC |  490 |  6.87 |    6.87 |  18.38
-    6 |         Radio  Sahadat |   22 |  0.31 |    0.31 |  18.69
-    7 |            Radio Azadi |  488 |  6.85 |    6.85 |  25.53
-    8 |           Radio Ariana |  164 |  2.30 |    2.30 |  27.83
-    9 |          Radio Dehkada |    6 |  0.08 |    0.08 |  27.92
-   10 |           Radio  Kilid |  147 |  2.06 |    2.06 |  29.98
-   11 |             Radio Sama |   19 |  0.27 |    0.27 |  30.25
-   12 |        Radio  Arakozia |   94 |  1.32 |    1.32 |  31.57
-   13 |        Radio  Watandar |   30 |  0.42 |    0.42 |  31.99
-   14 |        Radio  Shamshad |   75 |  1.05 |    1.05 |  33.04
-   15 | Radio Mili Afghanistan |   77 |  1.08 |    1.08 |  34.12
-   16 |           Racode to 11 |    0 |  0.00 |    0.00 |  34.12
-   17 |              Radio AMC |    2 |  0.03 |    0.03 |  34.15
-   18 |            Radio Shahr |    3 |  0.04 |    0.04 |  34.19
-   19 |       Radio Omid Jawan |    7 |  0.10 |    0.10 |  34.29
-   20 |      Radio Mili Ghazni |    8 |  0.11 |    0.11 |  34.40
-   21 |        Radio Rah Farda |   15 |  0.21 |    0.21 |  34.61
-   22 |        Radio Khorashan |    5 |  0.07 |    0.07 |  34.68
-   23 |            Radio Arezo |    7 |  0.10 |    0.10 |  34.78
-   24 |         Radio Palwasha |    3 |  0.04 |    0.04 |  34.82
-   25 |             Radio Dera |    2 |  0.03 |    0.03 |  34.85
-   26 |          Radio Hamsada |   39 |  0.55 |    0.55 |  35.40
-   27 |           Radio Takhar |   14 |  0.20 |    0.20 |  35.59
-   28 |        Radio Ai Khanum |   43 |  0.60 |    0.60 |  36.20
-   29 |           Radio Rayhan |    3 |  0.04 |    0.04 |  36.24
-   30 |      Radio Takharistan |   23 |  0.32 |    0.32 |  36.56
-   31 |    Radio Payam-e- Solh |    0 |  0.00 |    0.00 |  36.56
-   32 |     Radio Bayan Shamal |   44 |  0.62 |    0.62 |  37.18
-   33 |          Radio Shamali |    5 |  0.07 |    0.07 |  37.25
-   34 |       Radio Omid Farda |   10 |  0.14 |    0.14 |  37.39
-   35 |          Radio Mah Naw |    4 |  0.06 |    0.06 |  37.44
-   36 |           Radio Parnik |    3 |  0.04 |    0.04 |  37.49
-   37 |            Radio Taban |    2 |  0.03 |    0.03 |  37.51
-   38 |            Radio Tokhi |    0 |  0.00 |    0.00 |  37.51
-   39 |           Radio Muzhda |    5 |  0.07 |    0.07 |  37.58
-   40 |            Radio Herat |    8 |  0.11 |    0.11 |  37.70
-   41 |            Radio Quran |   19 |  0.27 |    0.27 |  37.96
-   42 |            Radio Ansar |   19 |  0.27 |    0.27 |  38.23
-   43 |            Radio Jawan |    5 |  0.07 |    0.07 |  38.30
-   44 |             Radio Nawa |   18 |  0.25 |    0.25 |  38.55
-   45 |           Radio Mardum |    7 |  0.10 |    0.10 |  38.65
-   46 |            Radio Baran |   16 |  0.22 |    0.22 |  38.87
-   47 |            Radio Melat |    5 |  0.07 |    0.07 |  38.95
-   48 |          Radio Ghoryan |    2 |  0.03 |    0.03 |  38.97
-   49 |            Radio Jamal |    2 |  0.03 |    0.03 |  39.00
-   50 |           Radio Bostan |    1 |  0.01 |    0.01 |  39.02
-   51 |            Radio Sahar |    3 |  0.04 |    0.04 |  39.06
-   52 |          Radio Ghazyan |    6 |  0.08 |    0.08 |  39.14
-   53 |             Radio Mehr |    7 |  0.10 |    0.10 |  39.24
-   54 |           Radio Esslah |   12 |  0.17 |    0.17 |  39.41
-   55 |         Radio Estiqlal |    5 |  0.07 |    0.07 |  39.48
-   56 |            Radio Zohal |    3 |  0.04 |    0.04 |  39.52
-   57 |           Radio Mashad |   11 |  0.15 |    0.15 |  39.67
-   58 |           Radio Wranga |   42 |  0.59 |    0.59 |  40.26
-   59 |            Radio Sanga |   31 |  0.43 |    0.43 |  40.70
-   60 |           Radio Mermun |   12 |  0.17 |    0.17 |  40.87
-   61 |         Radio Kandahar |   41 |  0.58 |    0.58 |  41.44
-   62 |          Radio Tabasum |   17 |  0.24 |    0.24 |  41.68
-   63 |             Radio Chin |    1 |  0.01 |    0.01 |  41.69
-   64 |           Radio Hekmat |    1 |  0.01 |    0.01 |  41.71
-   65 |            Radio Sehat |    0 |  0.00 |    0.00 |  41.71
-   66 |            Radio Sabah |    1 |  0.01 |    0.01 |  41.72
-   67 |            Radio Hewad |   28 |  0.39 |    0.39 |  42.12
-   68 |             Radio Rana |    1 |  0.01 |    0.01 |  42.13
-   69 |          Radio Nawrooz |    2 |  0.03 |    0.03 |  42.16
-   70 |             Radio Saqi |    3 |  0.04 |    0.04 |  42.20
-   71 |           Radio Shahrq |   88 |  1.23 |    1.23 |  43.43
-   72 |           Radio Enikas |   80 |  1.12 |    1.12 |  44.56
-   73 |          Radio Sharyat |    3 |  0.04 |    0.04 |  44.60
-   74 |           Radio Nargis |   18 |  0.25 |    0.25 |  44.85
-   75 |        Radio Nangarhar |   35 |  0.49 |    0.49 |  45.34
-   76 |              Radio Tan |    1 |  0.01 |    0.01 |  45.36
-   77 |         Radio Zewandun |    4 |  0.06 |    0.06 |  45.41
-   78 |             Radio Safa |    7 |  0.10 |    0.10 |  45.51
-   79 |            Radio Muram |    6 |  0.08 |    0.08 |  45.59
-   80 |            Radio Balkh |    2 |  0.03 |    0.03 |  45.62
-   81 |       Radio Tajikistan |    1 |  0.01 |    0.01 |  45.64
-   82 |            Radio Lahza |    6 |  0.08 |    0.08 |  45.72
-   83 |             Radio Nawa |    3 |  0.04 |    0.04 |  45.76
-   84 |   Radio Raba-e- Balkhi |    1 |  0.01 |    0.01 |  45.78
-   85 |    Radio Hamisha Bahar |   11 |  0.15 |    0.15 |  45.93
-   86 |           Radio Manzil |    3 |  0.04 |    0.04 |  45.97
-   87 |            Radio Munar |    4 |  0.06 |    0.06 |  46.03
-   88 |             Radio Dost |    2 |  0.03 |    0.03 |  46.06
-   89 |        Radio Spin Ghar |    2 |  0.03 |    0.03 |  46.09
-   90 |              Radio VOA |    0 |  0.00 |    0.00 |  46.09
-   91 |           Radio Chenar |    2 |  0.03 |    0.03 |  46.11
-   92 |         Radio Spozhmai |    0 |  0.00 |    0.00 |  46.11
-   93 |     Radio Tahlem Eslah |   14 |  0.20 |    0.20 |  46.31
-   94 |          Radio Maiwand |    2 |  0.03 |    0.03 |  46.34
-   95 |          Radio Resalat |    5 |  0.07 |    0.07 |  46.41
-   96 |         Radio Qarabagh |    1 |  0.01 |    0.01 |  46.42
-   97 |                     NA | 3775 | 52.96 |   52.96 |  99.38
-   98 |          Refused (vol) |    2 |  0.03 |    0.03 |  99.41
-   99 |       Don&#39;t know (vol) |   29 |  0.41 |    0.41 |  99.82
-  100 |           Radio Sorobi |    0 |  0.00 |    0.00 |  99.82
-  101 |          Radio Alkozay |    1 |  0.01 |    0.01 |  99.83
-  102 |            Radio Negah |    1 |  0.01 |    0.01 |  99.85
-  103 |          Radio Amozgar |    0 |  0.00 |    0.00 |  99.85
-  104 |         Radio Khorshid |    6 |  0.08 |    0.08 |  99.93
-  105 |          Radio Farhang |    0 |  0.00 |    0.00 |  99.93
-  106 |           Radio Rubina |    2 |  0.03 |    0.03 |  99.96
-  107 |        Radio Kahkashan |    1 |  0.01 |    0.01 |  99.97
-  108 |           Radio Zaboor |    0 |  0.00 |    0.00 |  99.97
-  109 |           Radio Zamzam |    0 |  0.00 |    0.00 |  99.97
-  110 |           Racode to 11 |    0 |  0.00 |    0.00 |  99.97
-  111 |       Radio Quran Ghag |    1 |  0.01 |    0.01 |  99.99
-  112 |            Radio Namad |    1 |  0.01 |    0.01 | 100.00
- &lt;NA&gt; |                   &lt;NA&gt; |    0 |  0.00 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
-<pre><code>
-Which radio stations do you listen to most often? (Second Mention) (x) &lt;numeric&gt;
-# total N=7128  valid N=7128  mean=66.67  sd=40.62
-
-Value |                  Label |    N | Raw % | Valid % | Cum. %
-----------------------------------------------------------------
-    1 |         Radio Arman FM |  308 |  4.32 |    4.32 |   4.32
-    2 |            Radio Ashna |  166 |  2.33 |    2.33 |   6.65
-    3 |       Radio Ghaznawian |   86 |  1.21 |    1.21 |   7.86
-    4 |           Radio Shamla |   19 |  0.27 |    0.27 |   8.12
-    5 |              Radio BBC |  315 |  4.42 |    4.42 |  12.54
-    6 |         Radio  Sahadat |   32 |  0.45 |    0.45 |  12.99
-    7 |            Radio Azadi |  347 |  4.87 |    4.87 |  17.86
-    8 |           Radio Ariana |  221 |  3.10 |    3.10 |  20.96
-    9 |          Radio Dehkada |   18 |  0.25 |    0.25 |  21.21
-   10 |           Radio  Kilid |  169 |  2.37 |    2.37 |  23.58
-   11 |             Radio Sama |   29 |  0.41 |    0.41 |  23.99
-   12 |        Radio  Arakozia |   94 |  1.32 |    1.32 |  25.31
-   13 |        Radio  Watandar |   39 |  0.55 |    0.55 |  25.86
-   14 |        Radio  Shamshad |   71 |  1.00 |    1.00 |  26.85
-   15 | Radio Mili Afghanistan |   88 |  1.23 |    1.23 |  28.09
-   16 |           Racode to 11 |    0 |  0.00 |    0.00 |  28.09
-   17 |              Radio AMC |    4 |  0.06 |    0.06 |  28.14
-   18 |            Radio Shahr |    2 |  0.03 |    0.03 |  28.17
-   19 |       Radio Omid Jawan |    3 |  0.04 |    0.04 |  28.21
-   20 |      Radio Mili Ghazni |    2 |  0.03 |    0.03 |  28.24
-   21 |        Radio Rah Farda |   13 |  0.18 |    0.18 |  28.42
-   22 |        Radio Khorashan |    6 |  0.08 |    0.08 |  28.51
-   23 |            Radio Arezo |   16 |  0.22 |    0.22 |  28.73
-   24 |         Radio Palwasha |    3 |  0.04 |    0.04 |  28.77
-   25 |             Radio Dera |    6 |  0.08 |    0.08 |  28.86
-   26 |          Radio Hamsada |   41 |  0.58 |    0.58 |  29.43
-   27 |           Radio Takhar |   11 |  0.15 |    0.15 |  29.59
-   28 |        Radio Ai Khanum |   38 |  0.53 |    0.53 |  30.12
-   29 |           Radio Rayhan |    5 |  0.07 |    0.07 |  30.19
-   30 |      Radio Takharistan |   17 |  0.24 |    0.24 |  30.43
-   31 |    Radio Payam-e- Solh |    6 |  0.08 |    0.08 |  30.51
-   32 |     Radio Bayan Shamal |   33 |  0.46 |    0.46 |  30.98
-   33 |          Radio Shamali |    9 |  0.13 |    0.13 |  31.10
-   34 |       Radio Omid Farda |   16 |  0.22 |    0.22 |  31.33
-   35 |          Radio Mah Naw |    5 |  0.07 |    0.07 |  31.40
-   36 |           Radio Parnik |    6 |  0.08 |    0.08 |  31.48
-   37 |            Radio Taban |    1 |  0.01 |    0.01 |  31.50
-   38 |            Radio Tokhi |    2 |  0.03 |    0.03 |  31.52
-   39 |           Radio Muzhda |    3 |  0.04 |    0.04 |  31.57
-   40 |            Radio Herat |   13 |  0.18 |    0.18 |  31.75
-   41 |            Radio Quran |   14 |  0.20 |    0.20 |  31.94
-   42 |            Radio Ansar |    9 |  0.13 |    0.13 |  32.07
-   43 |            Radio Jawan |    6 |  0.08 |    0.08 |  32.15
-   44 |             Radio Nawa |   13 |  0.18 |    0.18 |  32.34
-   45 |           Radio Mardum |   10 |  0.14 |    0.14 |  32.48
-   46 |            Radio Baran |   24 |  0.34 |    0.34 |  32.81
-   47 |            Radio Melat |    4 |  0.06 |    0.06 |  32.87
-   48 |          Radio Ghoryan |    2 |  0.03 |    0.03 |  32.90
-   49 |            Radio Jamal |    1 |  0.01 |    0.01 |  32.91
-   50 |           Radio Bostan |    2 |  0.03 |    0.03 |  32.94
-   51 |            Radio Sahar |    5 |  0.07 |    0.07 |  33.01
-   52 |          Radio Ghazyan |    9 |  0.13 |    0.13 |  33.14
-   53 |             Radio Mehr |    6 |  0.08 |    0.08 |  33.22
-   54 |           Radio Esslah |    5 |  0.07 |    0.07 |  33.29
-   55 |         Radio Estiqlal |    0 |  0.00 |    0.00 |  33.29
-   56 |            Radio Zohal |    4 |  0.06 |    0.06 |  33.35
-   57 |           Radio Mashad |    8 |  0.11 |    0.11 |  33.46
-   58 |           Radio Wranga |   27 |  0.38 |    0.38 |  33.84
-   59 |            Radio Sanga |   45 |  0.63 |    0.63 |  34.47
-   60 |           Radio Mermun |   23 |  0.32 |    0.32 |  34.79
-   61 |         Radio Kandahar |   20 |  0.28 |    0.28 |  35.07
-   62 |          Radio Tabasum |   15 |  0.21 |    0.21 |  35.28
-   63 |             Radio Chin |    2 |  0.03 |    0.03 |  35.31
-   64 |           Radio Hekmat |    0 |  0.00 |    0.00 |  35.31
-   65 |            Radio Sehat |    1 |  0.01 |    0.01 |  35.33
-   66 |            Radio Sabah |    2 |  0.03 |    0.03 |  35.35
-   67 |            Radio Hewad |   37 |  0.52 |    0.52 |  35.87
-   68 |             Radio Rana |    3 |  0.04 |    0.04 |  35.91
-   69 |          Radio Nawrooz |    2 |  0.03 |    0.03 |  35.94
-   70 |             Radio Saqi |    4 |  0.06 |    0.06 |  36.00
-   71 |           Radio Shahrq |   88 |  1.23 |    1.23 |  37.23
-   72 |           Radio Enikas |   61 |  0.86 |    0.86 |  38.09
-   73 |          Radio Sharyat |    0 |  0.00 |    0.00 |  38.09
-   74 |           Radio Nargis |   22 |  0.31 |    0.31 |  38.40
-   75 |        Radio Nangarhar |   28 |  0.39 |    0.39 |  38.79
-   76 |              Radio Tan |    1 |  0.01 |    0.01 |  38.80
-   77 |         Radio Zewandun |    4 |  0.06 |    0.06 |  38.86
-   78 |             Radio Safa |    5 |  0.07 |    0.07 |  38.93
-   79 |            Radio Muram |   10 |  0.14 |    0.14 |  39.07
-   80 |            Radio Balkh |    8 |  0.11 |    0.11 |  39.18
-   81 |       Radio Tajikistan |    1 |  0.01 |    0.01 |  39.20
-   82 |            Radio Lahza |    8 |  0.11 |    0.11 |  39.31
-   83 |             Radio Nawa |    4 |  0.06 |    0.06 |  39.37
-   84 |   Radio Raba-e- Balkhi |    1 |  0.01 |    0.01 |  39.38
-   85 |    Radio Hamisha Bahar |    9 |  0.13 |    0.13 |  39.51
-   86 |           Radio Manzil |    1 |  0.01 |    0.01 |  39.52
-   87 |            Radio Munar |    1 |  0.01 |    0.01 |  39.53
-   88 |             Radio Dost |    1 |  0.01 |    0.01 |  39.55
-   89 |        Radio Spin Ghar |    2 |  0.03 |    0.03 |  39.58
-   90 |              Radio VOA |    1 |  0.01 |    0.01 |  39.59
-   91 |           Radio Chenar |    3 |  0.04 |    0.04 |  39.63
-   92 |         Radio Spozhmai |    1 |  0.01 |    0.01 |  39.65
-   93 |     Radio Tahlem Eslah |   14 |  0.20 |    0.20 |  39.84
-   94 |          Radio Maiwand |    1 |  0.01 |    0.01 |  39.86
-   95 |          Radio Resalat |    0 |  0.00 |    0.00 |  39.86
-   96 |         Radio Qarabagh |    0 |  0.00 |    0.00 |  39.86
-   97 |                     NA | 3775 | 52.96 |   52.96 |  92.82
-   98 |          Refused (vol) |    2 |  0.03 |    0.03 |  92.85
-   99 |       Don&#39;t know (vol) |  491 |  6.89 |    6.89 |  99.73
-  100 |           Radio Sorobi |    1 |  0.01 |    0.01 |  99.75
-  101 |          Radio Alkozay |    1 |  0.01 |    0.01 |  99.76
-  102 |            Radio Negah |    1 |  0.01 |    0.01 |  99.78
-  103 |          Radio Amozgar |    1 |  0.01 |    0.01 |  99.79
-  104 |         Radio Khorshid |    8 |  0.11 |    0.11 |  99.90
-  105 |          Radio Farhang |    1 |  0.01 |    0.01 |  99.92
-  106 |           Radio Rubina |    3 |  0.04 |    0.04 |  99.96
-  107 |        Radio Kahkashan |    0 |  0.00 |    0.00 |  99.96
-  108 |           Radio Zaboor |    1 |  0.01 |    0.01 |  99.97
-  109 |           Radio Zamzam |    2 |  0.03 |    0.03 | 100.00
-  110 |           Racode to 11 |    0 |  0.00 |    0.00 | 100.00
-  111 |       Radio Quran Ghag |    0 |  0.00 |    0.00 | 100.00
-  112 |            Radio Namad |    0 |  0.00 |    0.00 | 100.00
- &lt;NA&gt; |                   &lt;NA&gt; |    0 |  0.00 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
-<p><table class="huxtable" style="border-collapse: collapse; border: 0px; margin-bottom: 2em; margin-top: 2em; ; margin-left: auto; margin-right: auto;  " id="tab:unnamed-chunk-6">
-<col><col><tr>
-<th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0.4pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">code</th><th style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0.4pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">radio_lab</th></tr>
-<tr>
-<td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0pt 0.4pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">1</td><td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0.4pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">Radio Arman FM</td></tr>
-<tr>
-<td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">5</td><td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">Radio BBC</td></tr>
-<tr>
-<td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">7</td><td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">Radio Azadi</td></tr>
-<tr>
-<td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">8</td><td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">Radio Ariana</td></tr>
-<tr>
-<td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">10</td><td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">Radio  Kilid</td></tr>
-<tr>
-<td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">12</td><td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">Radio  Arakozia</td></tr>
-<tr>
-<td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">71</td><td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">Radio Shahrq</td></tr>
-<tr>
-<td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">2</td><td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">Radio Ashna</td></tr>
-<tr>
-<td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">72</td><td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">Radio Enikas</td></tr>
-<tr>
-<td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">15</td><td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">Radio Mili Afghanistan</td></tr>
-<tr>
-<td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">14</td><td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">Radio  Shamshad</td></tr>
-<tr>
-<td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">3</td><td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">Radio Ghaznawian</td></tr>
-<tr>
-<td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">32</td><td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">Radio Bayan Shamal</td></tr>
-<tr>
-<td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">28</td><td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">Radio Ai Khanum</td></tr>
-<tr>
-<td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">58</td><td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">Radio Wranga</td></tr>
-<tr>
-<td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">61</td><td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">Radio Kandahar</td></tr>
-<tr>
-<td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">26</td><td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">Radio Hamsada</td></tr>
-<tr>
-<td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">75</td><td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">Radio Nangarhar</td></tr>
-<tr>
-<td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">59</td><td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">Radio Sanga</td></tr>
-<tr>
-<td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">13</td><td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">Radio  Watandar</td></tr>
-<tr>
-<td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">67</td><td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">Radio Hewad</td></tr>
-<tr>
-<td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">30</td><td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">Radio Takharistan</td></tr>
-<tr>
-<td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">6</td><td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">Radio  Sahadat</td></tr>
-<tr>
-<td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">11</td><td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">Radio Sama</td></tr>
-<tr>
-<td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">41</td><td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">Radio Quran</td></tr>
-<tr>
-<td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">42</td><td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">Radio Ansar</td></tr>
-<tr>
-<td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">44</td><td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">Radio Nawa</td></tr>
-<tr>
-<td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">74</td><td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">Radio Nargis</td></tr>
-<tr>
-<td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">62</td><td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">Radio Tabasum</td></tr>
-<tr>
-<td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">46</td><td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">Radio Baran</td></tr>
-<tr>
-<td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">21</td><td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">Radio Rah Farda</td></tr>
-<tr>
-<td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">27</td><td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">Radio Takhar</td></tr>
-<tr>
-<td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">93</td><td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">Radio Tahlem Eslah</td></tr>
-<tr>
-<td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">54</td><td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">Radio Esslah</td></tr>
-<tr>
-<td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">60</td><td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">Radio Mermun</td></tr>
-<tr>
-<td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">57</td><td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">Radio Mashad</td></tr>
-<tr>
-<td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">85</td><td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">Radio Hamisha Bahar</td></tr>
-<tr>
-<td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">4</td><td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">Radio Shamla</td></tr>
-<tr>
-<td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">34</td><td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">Radio Omid Farda</td></tr>
-<tr>
-<td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">20</td><td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">Radio Mili Ghazni</td></tr>
-<tr>
-<td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">40</td><td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">Radio Herat</td></tr>
-<tr>
-<td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">19</td><td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">Radio Omid Jawan</td></tr>
-<tr>
-<td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">23</td><td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">Radio Arezo</td></tr>
-<tr>
-<td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">45</td><td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">Radio Mardum</td></tr>
-<tr>
-<td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">53</td><td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">Radio Mehr</td></tr>
-<tr>
-<td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">78</td><td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">Radio Safa</td></tr>
-<tr>
-<td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">9</td><td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">Radio Dehkada</td></tr>
-<tr>
-<td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">52</td><td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">Radio Ghazyan</td></tr>
-<tr>
-<td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">79</td><td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">Radio Muram</td></tr>
-<tr>
-<td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">82</td><td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">Radio Lahza</td></tr>
-<tr>
-<td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">104</td><td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">Radio Khorshid</td></tr>
-<tr>
-<td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">22</td><td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">Radio Khorashan</td></tr>
-<tr>
-<td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">33</td><td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">Radio Shamali</td></tr>
-<tr>
-<td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">39</td><td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">Radio Muzhda</td></tr>
-<tr>
-<td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">43</td><td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">Radio Jawan</td></tr>
-<tr>
-<td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">47</td><td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">Radio Melat</td></tr>
-<tr>
-<td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">55</td><td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">Radio Estiqlal</td></tr>
-<tr>
-<td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">95</td><td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">Radio Resalat</td></tr>
-<tr>
-<td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">35</td><td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">Radio Mah Naw</td></tr>
-<tr>
-<td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">77</td><td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">Radio Zewandun</td></tr>
-<tr>
-<td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">87</td><td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">Radio Munar</td></tr>
-<tr>
-<td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">18</td><td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">Radio Shahr</td></tr>
-<tr>
-<td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">24</td><td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">Radio Palwasha</td></tr>
-<tr>
-<td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">29</td><td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">Radio Rayhan</td></tr>
-<tr>
-<td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">36</td><td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">Radio Parnik</td></tr>
-<tr>
-<td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">51</td><td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">Radio Sahar</td></tr>
-<tr>
-<td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">56</td><td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">Radio Zohal</td></tr>
-<tr>
-<td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">70</td><td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">Radio Saqi</td></tr>
-<tr>
-<td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">73</td><td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">Radio Sharyat</td></tr>
-<tr>
-<td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">83</td><td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">Radio Nawa</td></tr>
-<tr>
-<td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">86</td><td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">Radio Manzil</td></tr>
-<tr>
-<td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">17</td><td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">Radio AMC</td></tr>
-<tr>
-<td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">25</td><td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">Radio Dera</td></tr>
-<tr>
-<td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">37</td><td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">Radio Taban</td></tr>
-<tr>
-<td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">48</td><td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">Radio Ghoryan</td></tr>
-<tr>
-<td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">49</td><td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">Radio Jamal</td></tr>
-<tr>
-<td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">69</td><td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">Radio Nawrooz</td></tr>
-<tr>
-<td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">80</td><td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">Radio Balkh</td></tr>
-<tr>
-<td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">88</td><td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">Radio Dost</td></tr>
-<tr>
-<td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">89</td><td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">Radio Spin Ghar</td></tr>
-<tr>
-<td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">91</td><td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">Radio Chenar</td></tr>
-<tr>
-<td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">94</td><td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">Radio Maiwand</td></tr>
-<tr>
-<td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">106</td><td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">Radio Rubina</td></tr>
-<tr>
-<td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">50</td><td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">Radio Bostan</td></tr>
-<tr>
-<td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">63</td><td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">Radio Chin</td></tr>
-<tr>
-<td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">64</td><td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">Radio Hekmat</td></tr>
-<tr>
-<td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">66</td><td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">Radio Sabah</td></tr>
-<tr>
-<td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">68</td><td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">Radio Rana</td></tr>
-<tr>
-<td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">76</td><td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">Radio Tan</td></tr>
-<tr>
-<td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">81</td><td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">Radio Tajikistan</td></tr>
-<tr>
-<td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">84</td><td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">Radio Raba-e- Balkhi</td></tr>
-<tr>
-<td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">96</td><td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">Radio Qarabagh</td></tr>
-<tr>
-<td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">101</td><td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">Radio Alkozay</td></tr>
-<tr>
-<td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">102</td><td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">Radio Negah</td></tr>
-<tr>
-<td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">107</td><td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">Radio Kahkashan</td></tr>
-<tr>
-<td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">111</td><td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">Radio Quran Ghag</td></tr>
-<tr>
-<td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0.4pt 0.4pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">112</td><td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0.4pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">Radio Namad</td></tr>
-</table>
 <style>html {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
 }
 
-#pddcnjwfxf .gt_table {
+#hfayimkuql .gt_table {
   display: table;
   border-collapse: collapse;
   margin-left: auto;
@@ -2692,7 +2264,7 @@ Value |                  Label |    N | Raw % | Valid % | Cum. %
   border-left-color: #D3D3D3;
 }
 
-#pddcnjwfxf .gt_heading {
+#hfayimkuql .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -2704,7 +2276,7 @@ Value |                  Label |    N | Raw % | Valid % | Cum. %
   border-right-color: #D3D3D3;
 }
 
-#pddcnjwfxf .gt_title {
+#hfayimkuql .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -2714,7 +2286,7 @@ Value |                  Label |    N | Raw % | Valid % | Cum. %
   border-bottom-width: 0;
 }
 
-#pddcnjwfxf .gt_subtitle {
+#hfayimkuql .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -2724,13 +2296,13 @@ Value |                  Label |    N | Raw % | Valid % | Cum. %
   border-top-width: 0;
 }
 
-#pddcnjwfxf .gt_bottom_border {
+#hfayimkuql .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#pddcnjwfxf .gt_col_headings {
+#hfayimkuql .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2745,7 +2317,7 @@ Value |                  Label |    N | Raw % | Valid % | Cum. %
   border-right-color: #D3D3D3;
 }
 
-#pddcnjwfxf .gt_col_heading {
+#hfayimkuql .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2765,7 +2337,7 @@ Value |                  Label |    N | Raw % | Valid % | Cum. %
   overflow-x: hidden;
 }
 
-#pddcnjwfxf .gt_column_spanner_outer {
+#hfayimkuql .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2777,15 +2349,15 @@ Value |                  Label |    N | Raw % | Valid % | Cum. %
   padding-right: 4px;
 }
 
-#pddcnjwfxf .gt_column_spanner_outer:first-child {
+#hfayimkuql .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#pddcnjwfxf .gt_column_spanner_outer:last-child {
+#hfayimkuql .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#pddcnjwfxf .gt_column_spanner {
+#hfayimkuql .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -2797,7 +2369,7 @@ Value |                  Label |    N | Raw % | Valid % | Cum. %
   width: 100%;
 }
 
-#pddcnjwfxf .gt_group_heading {
+#hfayimkuql .gt_group_heading {
   padding: 8px;
   color: #333333;
   background-color: #FFFFFF;
@@ -2819,7 +2391,7 @@ Value |                  Label |    N | Raw % | Valid % | Cum. %
   vertical-align: middle;
 }
 
-#pddcnjwfxf .gt_empty_group_heading {
+#hfayimkuql .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -2834,15 +2406,15 @@ Value |                  Label |    N | Raw % | Valid % | Cum. %
   vertical-align: middle;
 }
 
-#pddcnjwfxf .gt_from_md > :first-child {
+#hfayimkuql .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#pddcnjwfxf .gt_from_md > :last-child {
+#hfayimkuql .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#pddcnjwfxf .gt_row {
+#hfayimkuql .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2861,7 +2433,7 @@ Value |                  Label |    N | Raw % | Valid % | Cum. %
   overflow-x: hidden;
 }
 
-#pddcnjwfxf .gt_stub {
+#hfayimkuql .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2873,7 +2445,7 @@ Value |                  Label |    N | Raw % | Valid % | Cum. %
   padding-left: 12px;
 }
 
-#pddcnjwfxf .gt_summary_row {
+#hfayimkuql .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2883,7 +2455,7 @@ Value |                  Label |    N | Raw % | Valid % | Cum. %
   padding-right: 5px;
 }
 
-#pddcnjwfxf .gt_first_summary_row {
+#hfayimkuql .gt_first_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2893,7 +2465,7 @@ Value |                  Label |    N | Raw % | Valid % | Cum. %
   border-top-color: #D3D3D3;
 }
 
-#pddcnjwfxf .gt_grand_summary_row {
+#hfayimkuql .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2903,7 +2475,7 @@ Value |                  Label |    N | Raw % | Valid % | Cum. %
   padding-right: 5px;
 }
 
-#pddcnjwfxf .gt_first_grand_summary_row {
+#hfayimkuql .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2913,11 +2485,11 @@ Value |                  Label |    N | Raw % | Valid % | Cum. %
   border-top-color: #D3D3D3;
 }
 
-#pddcnjwfxf .gt_striped {
+#hfayimkuql .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#pddcnjwfxf .gt_table_body {
+#hfayimkuql .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2926,7 +2498,7 @@ Value |                  Label |    N | Raw % | Valid % | Cum. %
   border-bottom-color: #D3D3D3;
 }
 
-#pddcnjwfxf .gt_footnotes {
+#hfayimkuql .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2940,13 +2512,13 @@ Value |                  Label |    N | Raw % | Valid % | Cum. %
   border-right-color: #D3D3D3;
 }
 
-#pddcnjwfxf .gt_footnote {
+#hfayimkuql .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding: 4px;
 }
 
-#pddcnjwfxf .gt_sourcenotes {
+#hfayimkuql .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2960,46 +2532,46 @@ Value |                  Label |    N | Raw % | Valid % | Cum. %
   border-right-color: #D3D3D3;
 }
 
-#pddcnjwfxf .gt_sourcenote {
+#hfayimkuql .gt_sourcenote {
   font-size: 90%;
   padding: 4px;
 }
 
-#pddcnjwfxf .gt_left {
+#hfayimkuql .gt_left {
   text-align: left;
 }
 
-#pddcnjwfxf .gt_center {
+#hfayimkuql .gt_center {
   text-align: center;
 }
 
-#pddcnjwfxf .gt_right {
+#hfayimkuql .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#pddcnjwfxf .gt_font_normal {
+#hfayimkuql .gt_font_normal {
   font-weight: normal;
 }
 
-#pddcnjwfxf .gt_font_bold {
+#hfayimkuql .gt_font_bold {
   font-weight: bold;
 }
 
-#pddcnjwfxf .gt_font_italic {
+#hfayimkuql .gt_font_italic {
   font-style: italic;
 }
 
-#pddcnjwfxf .gt_super {
+#hfayimkuql .gt_super {
   font-size: 65%;
 }
 
-#pddcnjwfxf .gt_footnote_marks {
+#hfayimkuql .gt_footnote_marks {
   font-style: italic;
   font-size: 65%;
 }
 </style>
-<div id="pddcnjwfxf" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;"><table class="gt_table">
+<div id="hfayimkuql" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;"><table class="gt_table">
   
   <thead class="gt_col_headings">
     <tr>
@@ -3595,7 +3167,7 @@ Value |                  Label |    N | Raw % | Valid % | Cum. %
   </tbody>
   
   
-</table></div></p>
+</table></div>
 </div>
 <div id="second-mention" class="section level4">
 <h4>Second mention</h4>
