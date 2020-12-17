@@ -2,10 +2,46 @@
 title: "Descriptive Statistics"
 author: "Jeff Yang, Jacob Patterson-Stein, Dan Killian"
 date: "2020-12-11"
+navbar:
+  title: Descriptive statistics
+  left:
+  - text: Awareness of USAID
+    href: module-B.html
+  - text: Media
+    href: module-C.html
 output: workflowr::wflow_html
 editor_options:
   chunk_output_type: console
 ---
+
+
+navbar:
+  title: USAID Baseline Public Perception Survey
+  left:
+  - text: Home
+    href: index.html
+  - text: About
+    href: about.html
+  - text: Methods
+    href: methods.html
+  - text: Descriptive statistics
+    href: descriptives.html
+  - text: Exploratory analyses
+    href: explore.html
+  - text: License
+    href: license.html
+  right:
+  - icon: fa-gitlab
+    text: Source code
+    href: https://gitlab.com/dkillian/bpps
+output:
+  workflowr::wflow_html:
+    toc: yes
+    toc_float: yes
+    theme: flatly
+    highlight: textmate
+    
+    
 
 ## Introduction
 
