@@ -2,14 +2,24 @@
 title: "Descriptive Statistics"
 author: "Jeff Yang, Jacob Patterson-Stein, Dan Killian"
 date: "2020-12-11"
+navbar:
+  title: Descriptive statistics
+  left:
+  - text: Awareness of USAID
+    href: module-B.html
+  - text: Media
+    href: module-C.html
 output: workflowr::wflow_html
 editor_options:
   chunk_output_type: console
 ---
 
+
 ## Introduction
 
 This section reviews the raw frequencies and means of the BPPS survey data. The following files explore each survey module. 
+
+## Modules
 
 The following files explore the survey data. 
 

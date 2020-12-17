@@ -353,7 +353,7 @@ $(document).ready(function () {
 <div class="tab-content">
 <div id="summary" class="tab-pane fade in active">
 <p>
-<strong>Last updated:</strong> 2020-12-11
+<strong>Last updated:</strong> 2020-12-16
 </p>
 <p>
 <strong>Checks:</strong> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> 2 <span class="glyphicon glyphicon-exclamation-sign text-danger" aria-hidden="true"></span> 0
@@ -384,16 +384,16 @@ This reproducible <a href="http://rmarkdown.rstudio.com">R Markdown</a> analysis
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgitlabcomdkillianbppstreedea48b3fcfc5e868c6366ce462bc34cec2ae4ed3targetblankdea48b3a"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://gitlab.com/dkillian/bpps/tree/dea48b3fcfc5e868c6366ce462bc34cec2ae4ed3" target="_blank">dea48b3</a> </a>
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgitlabcomdkillianbppstree3a8299500b1c5a52513ae595934636164662540etargetblank3a82995a"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://gitlab.com/dkillian/bpps/tree/3a8299500b1c5a52513ae595934636164662540e" target="_blank">3a82995</a> </a>
 </p>
 </div>
-<div id="strongRepositoryversionstrongahrefhttpsgitlabcomdkillianbppstreedea48b3fcfc5e868c6366ce462bc34cec2ae4ed3targetblankdea48b3a" class="panel-collapse collapse">
+<div id="strongRepositoryversionstrongahrefhttpsgitlabcomdkillianbppstree3a8299500b1c5a52513ae595934636164662540etargetblank3a82995a" class="panel-collapse collapse">
 <div class="panel-body">
 <p>
 Great! You are using Git for version control. Tracking code development and connecting the code version to the results is critical for reproducibility.
 </p>
 <p>
-The results in this page were generated with repository version <a href="https://gitlab.com/dkillian/bpps/tree/dea48b3fcfc5e868c6366ce462bc34cec2ae4ed3" target="_blank">dea48b3</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
+The results in this page were generated with repository version <a href="https://gitlab.com/dkillian/bpps/tree/3a8299500b1c5a52513ae595934636164662540e" target="_blank">3a82995</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
 </p>
 <p>
 Note that you need to be careful to ensure that all relevant files for the analysis have been committed to Git prior to generating the results (you can use <code>wflow_publish</code> or <code>wflow_git_commit</code>). workflowr only checks the R Markdown file, but you know if there are other scripts or data files that it depends on. Below is the status of the Git repository when the results were generated:
@@ -404,16 +404,17 @@ Ignored files:
     Ignored:    .Rproj.user/
     Ignored:    analysis/freq-test_cache/
     Ignored:    analysis/frequencies_cache/
+    Ignored:    analysis/module-B_cache/
+    Ignored:    analysis/module-C_cache/
+    Ignored:    analysis/module-E_cache/
     Ignored:    analysis/univariate-frequencies_cache/
 
 Untracked files:
-    Untracked:  bootstrap.min.css
+    Untracked:  analysis/module-E.Rmd
+    Untracked:  code/bpps univariate freq function.R
+    Untracked:  code/djk workflowr commands.R
+    Untracked:  temp/
     Untracked:  univariate-frequencies_cache/
-
-Unstaged changes:
-    Modified:   analysis/_site.yml
-    Modified:   analysis/index.Rmd
-    Deleted:    analysis/univariate frequencies.Rmd
 
 </code></pre>
 <p>
@@ -452,6 +453,108 @@ Message
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://glcdn.githack.com/dkillian/bpps/raw/2cfb76c66a7521776d210492ae9b4e58e4f1ba94/public/license.html" target="_blank">2cfb76c</a>
+</td>
+<td>
+dkillian
+</td>
+<td>
+2020-12-16
+</td>
+<td>
+Build site.
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://glcdn.githack.com/dkillian/bpps/raw/135f71006e597b98e108a7a73e53717edbe7bbe8/public/license.html" target="_blank">135f710</a>
+</td>
+<td>
+dkillian
+</td>
+<td>
+2020-12-16
+</td>
+<td>
+Build site.
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://glcdn.githack.com/dkillian/bpps/raw/7c4a803a761ad9af6335ca4f08d93f64422a8209/public/license.html" target="_blank">7c4a803</a>
+</td>
+<td>
+dkillian
+</td>
+<td>
+2020-12-16
+</td>
+<td>
+wflow_publish(“analysis/descriptives.Rmd”, republish = T)
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://glcdn.githack.com/dkillian/bpps/raw/0e6e3e1bc92af03c7751ba35cd4b1478d4971ff3/public/license.html" target="_blank">0e6e3e1</a>
+</td>
+<td>
+dkillian
+</td>
+<td>
+2020-12-16
+</td>
+<td>
+Build site.
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://glcdn.githack.com/dkillian/bpps/raw/de63726017bf09210bf4449a33775111183e674c/public/license.html" target="_blank">de63726</a>
+</td>
+<td>
+dkillian
+</td>
+<td>
+2020-12-16
+</td>
+<td>
+Build site.
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://glcdn.githack.com/dkillian/bpps/raw/94bfe75cda07fe05701b30ebf7b7865700da151c/public/license.html" target="_blank">94bfe75</a>
+</td>
+<td>
+dkillian
+</td>
+<td>
+2020-12-11
+</td>
+<td>
+Build site.
+</td>
+</tr>
 <tr>
 <td>
 html
