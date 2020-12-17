@@ -128,8 +128,6 @@ c1
 ### C2. How many days a week do you listen to radio programs?
 
 ```{r}
-frq(dat$C2)
-get_labels(dat$c2)
 days <- labs$days
 
 c2 <- svyrdat %>%
