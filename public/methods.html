@@ -27,6 +27,8 @@
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
 <link href="site_libs/highlightjs-9.12.0/textmate.css" rel="stylesheet" />
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<link href="site_libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
+<script src="site_libs/anchor-sections-1.0/anchor-sections.js"></script>
 <link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
 <link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
 
@@ -37,6 +39,15 @@ div.section {
   padding-top: 12px;
 }
 </style>
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
 
 <style type="text/css">code{white-space: pre;}</style>
 <style type="text/css">
@@ -428,7 +439,7 @@ div.tocify {
 <strong>Checks:</strong> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> 7 <span class="glyphicon glyphicon-exclamation-sign text-danger" aria-hidden="true"></span> 0
 </p>
 <p>
-<strong>Knit directory:</strong> <code>BPPS/</code> <span class="glyphicon glyphicon-question-sign" aria-hidden="true" title="This is the local directory in which the code in this file was executed."> </span>
+<strong>Knit directory:</strong> <code>USAID Baseline Public Perception Survey/</code> <span class="glyphicon glyphicon-question-sign" aria-hidden="true" title="This is the local directory in which the code in this file was executed."> </span>
 </p>
 <p>
 This reproducible <a href="http://rmarkdown.rstudio.com">R Markdown</a> analysis was created with <a
@@ -513,50 +524,35 @@ This reproducible <a href="http://rmarkdown.rstudio.com">R Markdown</a> analysis
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<<<<<<< HEAD
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgitlabcomdkillianbppstreeb8595796f8cfb2e15ee58782ad9974cf01683727targetblankb859579a"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://gitlab.com/dkillian/bpps/tree/b8595796f8cfb2e15ee58782ad9974cf01683727" target="_blank">b859579</a> </a>
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomdkillianbppstree9ea9eb4fc75eb4c29cb7c3da57e92dc520e27e82targetblank9ea9eb4a"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/dkillian/bpps/tree/9ea9eb4fc75eb4c29cb7c3da57e92dc520e27e82" target="_blank">9ea9eb4</a> </a>
 </p>
 </div>
-<div id="strongRepositoryversionstrongahrefhttpsgitlabcomdkillianbppstreeb8595796f8cfb2e15ee58782ad9974cf01683727targetblankb859579a" class="panel-collapse collapse">
-=======
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgitlabcomdkillianbppstreeabdc01db8d960c7f8098cc1936587c230d555d31targetblankabdc01da"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://gitlab.com/dkillian/bpps/tree/abdc01db8d960c7f8098cc1936587c230d555d31" target="_blank">abdc01d</a> </a>
-</p>
-</div>
-<div id="strongRepositoryversionstrongahrefhttpsgitlabcomdkillianbppstreeabdc01db8d960c7f8098cc1936587c230d555d31targetblankabdc01da" class="panel-collapse collapse">
->>>>>>> master
+<div id="strongRepositoryversionstrongahrefhttpsgithubcomdkillianbppstree9ea9eb4fc75eb4c29cb7c3da57e92dc520e27e82targetblank9ea9eb4a" class="panel-collapse collapse">
 <div class="panel-body">
 <p>
 Great! You are using Git for version control. Tracking code development and connecting the code version to the results is critical for reproducibility.
 </p>
 <p>
-<<<<<<< HEAD
-The results in this page were generated with repository version <a href="https://gitlab.com/dkillian/bpps/tree/b8595796f8cfb2e15ee58782ad9974cf01683727" target="_blank">b859579</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
-=======
-The results in this page were generated with repository version <a href="https://gitlab.com/dkillian/bpps/tree/abdc01db8d960c7f8098cc1936587c230d555d31" target="_blank">abdc01d</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
->>>>>>> master
+The results in this page were generated with repository version <a href="https://github.com/dkillian/bpps/tree/9ea9eb4fc75eb4c29cb7c3da57e92dc520e27e82" target="_blank">9ea9eb4</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
 </p>
 <p>
 Note that you need to be careful to ensure that all relevant files for the analysis have been committed to Git prior to generating the results (you can use <code>wflow_publish</code> or <code>wflow_git_commit</code>). workflowr only checks the R Markdown file, but you know if there are other scripts or data files that it depends on. Below is the status of the Git repository when the results were generated:
 </p>
 <pre><code>
 Ignored files:
+    Ignored:    .Rhistory
     Ignored:    .Rproj.user/
+    Ignored:    analysis/freq-test_cache/
     Ignored:    analysis/frequencies_cache/
+    Ignored:    analysis/module-B_cache/
     Ignored:    analysis/module-C_cache/
+    Ignored:    analysis/module-E_cache/
+    Ignored:    analysis/univariate-frequencies_cache/
 
 Untracked files:
-<<<<<<< HEAD
-    Untracked:  code/bpps univariate freq function.R
     Untracked:  code/djk workflowr commands.R
     Untracked:  temp/
     Untracked:  univariate-frequencies_cache/
-=======
-    Untracked:  analysis/module-D.Rmd
-    Untracked:  code/workflowr explore by Jeff.R
-
-Unstaged changes:
-    Modified:   code/workflowr explore.R
->>>>>>> master
 
 </code></pre>
 <p>
@@ -600,11 +596,7 @@ Message
 html
 </td>
 <td>
-<<<<<<< HEAD
-<a href="https://glcdn.githack.com/dkillian/bpps/raw/af7bfd385d302563f3773b6ffb34ad7282d56385/public/methods.html" target="_blank">af7bfd3</a>
-=======
-<a href="https://glcdn.githack.com/dkillian/bpps/raw/4caac5cfd429308f0e56c9c70ba78e85091da473/public/methods.html" target="_blank">4caac5c</a>
->>>>>>> master
+<a href="https://rawcdn.githack.com/dkillian/bpps/79c7839fc53da521c35b9f5be646508730846419/public/methods.html" target="_blank">79c7839</a>
 </td>
 <td>
 dkillian
@@ -613,11 +605,75 @@ dkillian
 2020-12-17
 </td>
 <td>
-<<<<<<< HEAD
+djk trying
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/dkillian/bpps/be066e45ca9dc0a458a6642393c4946bb5b24977/public/methods.html" target="_blank">be066e4</a>
+</td>
+<td>
+dkillian
+</td>
+<td>
+2020-12-17
+</td>
+<td>
 Build site.
-=======
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/dkillian/bpps/af7bfd385d302563f3773b6ffb34ad7282d56385/public/methods.html" target="_blank">af7bfd3</a>
+</td>
+<td>
+dkillian
+</td>
+<td>
+2020-12-17
+</td>
+<td>
+Build site.
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/dkillian/bpps/a741211207359b2dfd5b61cc99db316e9d445d83/public/methods.html" target="_blank">a741211</a>
+</td>
+<td>
+dkillian
+</td>
+<td>
+2020-12-17
+</td>
+<td>
+Build site.
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/dkillian/bpps/4caac5cfd429308f0e56c9c70ba78e85091da473/public/methods.html" target="_blank">4caac5c</a>
+</td>
+<td>
+dkillian
+</td>
+<td>
+2020-12-17
+</td>
+<td>
 update
->>>>>>> master
 </td>
 </tr>
 <tr>
@@ -625,7 +681,7 @@ update
 html
 </td>
 <td>
-<a href="https://glcdn.githack.com/dkillian/bpps/raw/6edee66f5e27107f431b8f610799d227e7a8aa7c/public/methods.html" target="_blank">6edee66</a>
+<a href="https://rawcdn.githack.com/dkillian/bpps/6edee66f5e27107f431b8f610799d227e7a8aa7c/public/methods.html" target="_blank">6edee66</a>
 </td>
 <td>
 dkillian
@@ -642,7 +698,7 @@ Build site.
 html
 </td>
 <td>
-<a href="https://glcdn.githack.com/dkillian/bpps/raw/2cfb76c66a7521776d210492ae9b4e58e4f1ba94/public/methods.html" target="_blank">2cfb76c</a>
+<a href="https://rawcdn.githack.com/dkillian/bpps/2cfb76c66a7521776d210492ae9b4e58e4f1ba94/public/methods.html" target="_blank">2cfb76c</a>
 </td>
 <td>
 dkillian
@@ -659,7 +715,7 @@ Build site.
 html
 </td>
 <td>
-<a href="https://glcdn.githack.com/dkillian/bpps/raw/135f71006e597b98e108a7a73e53717edbe7bbe8/public/methods.html" target="_blank">135f710</a>
+<a href="https://rawcdn.githack.com/dkillian/bpps/135f71006e597b98e108a7a73e53717edbe7bbe8/public/methods.html" target="_blank">135f710</a>
 </td>
 <td>
 dkillian
@@ -676,7 +732,7 @@ Build site.
 html
 </td>
 <td>
-<a href="https://glcdn.githack.com/dkillian/bpps/raw/7c4a803a761ad9af6335ca4f08d93f64422a8209/public/methods.html" target="_blank">7c4a803</a>
+<a href="https://rawcdn.githack.com/dkillian/bpps/7c4a803a761ad9af6335ca4f08d93f64422a8209/public/methods.html" target="_blank">7c4a803</a>
 </td>
 <td>
 dkillian
@@ -693,7 +749,7 @@ wflow_publish(“analysis/descriptives.Rmd”, republish = T)
 html
 </td>
 <td>
-<a href="https://glcdn.githack.com/dkillian/bpps/raw/0e6e3e1bc92af03c7751ba35cd4b1478d4971ff3/public/methods.html" target="_blank">0e6e3e1</a>
+<a href="https://rawcdn.githack.com/dkillian/bpps/0e6e3e1bc92af03c7751ba35cd4b1478d4971ff3/public/methods.html" target="_blank">0e6e3e1</a>
 </td>
 <td>
 dkillian
@@ -710,7 +766,7 @@ Build site.
 html
 </td>
 <td>
-<a href="https://glcdn.githack.com/dkillian/bpps/raw/de63726017bf09210bf4449a33775111183e674c/public/methods.html" target="_blank">de63726</a>
+<a href="https://rawcdn.githack.com/dkillian/bpps/de63726017bf09210bf4449a33775111183e674c/public/methods.html" target="_blank">de63726</a>
 </td>
 <td>
 dkillian
@@ -727,7 +783,7 @@ Build site.
 html
 </td>
 <td>
-<a href="https://glcdn.githack.com/dkillian/bpps/raw/fe1f07022ae70f1f931706eb4ae6898ffcca59d7/public/methods.html" target="_blank">fe1f070</a>
+<a href="https://rawcdn.githack.com/dkillian/bpps/fe1f07022ae70f1f931706eb4ae6898ffcca59d7/public/methods.html" target="_blank">fe1f070</a>
 </td>
 <td>
 dkillian
@@ -744,7 +800,7 @@ Build site.
 Rmd
 </td>
 <td>
-<a href="https://gitlab.com/dkillian/bpps/blob/a81fcf1a0cda55cbf20fde24327b799bc691b729/analysis/methods.Rmd" target="_blank">a81fcf1</a>
+<a href="https://github.com/dkillian/bpps/blob/a81fcf1a0cda55cbf20fde24327b799bc691b729/analysis/methods.Rmd" target="_blank">a81fcf1</a>
 </td>
 <td>
 dkillian
@@ -773,9 +829,9 @@ wflow_publish(“analysis/methods.Rmd”)
 </p>
 <div id="workflowr-sessioninfo" class="collapse">
 <pre class="r"><code>sessionInfo()</code></pre>
-<pre><code>R version 3.6.2 (2019-12-12)
+<pre><code>R version 4.0.3 (2020-10-10)
 Platform: x86_64-w64-mingw32/x64 (64-bit)
-Running under: Windows 10 x64 (build 18362)
+Running under: Windows 10 x64 (build 18363)
 
 Matrix products: default
 
@@ -793,14 +849,14 @@ other attached packages:
 [1] workflowr_1.6.2
 
 loaded via a namespace (and not attached):
- [1] Rcpp_1.0.5       rstudioapi_0.11  whisker_0.4      knitr_1.30      
- [5] magrittr_1.5     R6_2.4.1         rlang_0.4.7      stringr_1.4.0   
- [9] tools_3.6.2      xfun_0.17        git2r_0.27.1     htmltools_0.5.0 
-[13] ellipsis_0.3.1   rprojroot_1.3-2  yaml_2.2.1       digest_0.6.25   
-[17] tibble_3.0.3     lifecycle_0.2.0  crayon_1.3.4     later_1.1.0.1   
-[21] vctrs_0.3.4      promises_1.1.1   fs_1.5.0         glue_1.4.2      
-[25] evaluate_0.14    rmarkdown_2.3    stringi_1.4.6    compiler_3.6.2  
-[29] pillar_1.4.6     backports_1.1.10 httpuv_1.5.4     pkgconfig_2.0.3 </code></pre>
+ [1] Rcpp_1.0.5      rstudioapi_0.13 whisker_0.4     knitr_1.30     
+ [5] magrittr_2.0.1  R6_2.5.0        rlang_0.4.8     stringr_1.4.0  
+ [9] tools_4.0.3     xfun_0.19       git2r_0.27.1    htmltools_0.5.0
+[13] ellipsis_0.3.1  rprojroot_2.0.2 yaml_2.2.1      digest_0.6.27  
+[17] tibble_3.0.4    lifecycle_0.2.0 crayon_1.3.4    later_1.1.0.1  
+[21] vctrs_0.3.5     promises_1.1.1  fs_1.5.0        glue_1.4.2     
+[25] evaluate_0.14   rmarkdown_2.5   stringi_1.5.3   compiler_4.0.3 
+[29] pillar_1.4.7    httpuv_1.5.4    pkgconfig_2.0.3</code></pre>
 </div>
 </div>
 
@@ -827,7 +883,7 @@ footer is added to webpages before the MathJax javascript. -->
 
 // add bootstrap table styles to pandoc tables
 function bootstrapStylePandocTables() {
-  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
 }
 $(document).ready(function () {
   bootstrapStylePandocTables();
