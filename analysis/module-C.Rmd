@@ -124,6 +124,11 @@ c1
 
 ```{r}
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+#frq(dat$C2)
+get_labels(dat$C2)
+>>>>>>> f9317ee36395569abf59de08f0850cfc540c4f0c
 =======
 #frq(dat$C2)
 get_labels(dat$C2)
@@ -165,9 +170,17 @@ c2
 
 ```{r}
 <<<<<<< HEAD
+<<<<<<< HEAD
 hour_code <- c(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,97,98,99)
 hour_lab <- c("1 hour","2 hours","3 hours","4 hours","5 hours","6 hours","7 hours","8 hours","9 hours","10 hours","11 hours","12 hours","13 hours","14 hours","15 hours","16 hours","N/A","Refused","Don't know")
 hours <- data.frame(hour_code, hour_lab)
+=======
+#frq(dat$C3)
+hour_code <- c(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,97,98,99)
+hour_lab <- c("1 hour","2 hours","3 hours","4 hours","5 hours","6 hours","7 hours","8 hours","9 hours","10 hours","11 hours","12 hours","13 hours","14 hours","15 hours","16 hours","N/A","Refused","Don't know")
+hours <- data.frame(hour_code, hour_lab)
+#names(hours)
+>>>>>>> f9317ee36395569abf59de08f0850cfc540c4f0c
 =======
 #frq(dat$C3)
 hour_code <- c(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,97,98,99)
@@ -203,8 +216,13 @@ c3
 
 ```{r}
 <<<<<<< HEAD
+<<<<<<< HEAD
 # frq(dat$C4a)
 # frq(dat$C4b)
+=======
+#frq(dat$C4a)
+#frq(dat$C4b)
+>>>>>>> f9317ee36395569abf59de08f0850cfc540c4f0c
 =======
 #frq(dat$C4a)
 #frq(dat$C4b)
@@ -222,7 +240,11 @@ radio1 <- data.frame(frq(dat$C4a)) %>%
          radio_lab = label) %>%
   select(code,radio_lab)
 <<<<<<< HEAD
+<<<<<<< HEAD
 # radio1
+=======
+#radio1
+>>>>>>> f9317ee36395569abf59de08f0850cfc540c4f0c
 =======
 #radio1
 >>>>>>> f9317ee36395569abf59de08f0850cfc540c4f0c
