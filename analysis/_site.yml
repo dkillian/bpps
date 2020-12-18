@@ -22,6 +22,7 @@ navbar:
 output:
   workflowr::wflow_html:
     toc: yes
+    toc_depth: 4
     toc_float: yes
     theme: flatly
     highlight: textmate

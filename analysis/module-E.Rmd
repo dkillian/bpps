@@ -1,6 +1,6 @@
 ---
-title: "module-E"
-author: "dkillian"
+title: "Governance"
+author: "Dan Killian"
 date: "2020-12-16"
 output: workflowr::wflow_html
 editor_options:
@@ -79,7 +79,7 @@ svydat <- svydesign(data = dat,
 
 
 svyrdat <- dat %>%
-  as_survey_design(ids= PSU,
+  as_survey_design(ids= c(PSU,A9),
                    strata=strata,
                    weights=Wgt1)
 ```
@@ -402,7 +402,7 @@ e7
 ```
 
 
-#### E8. The peace agreement between the US and Taliban calls for direct negotiations between the Taliban and the Government of Afghanistan. Are you pessimistic or optimistic that the Government of Afghanistan and the Taliban will be able to negotiate a peace agreement?
+#### E8. Are you pessimistic or optimistic that the Government of Afghanistan and the Taliban will be able to negotiate a peace agreement?
 
 
 ```{r}
