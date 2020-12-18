@@ -433,7 +433,7 @@ div.tocify {
 <div class="tab-content">
 <div id="summary" class="tab-pane fade in active">
 <p>
-<strong>Last updated:</strong> 2020-12-17
+<strong>Last updated:</strong> 2020-12-18
 </p>
 <p>
 <strong>Checks:</strong> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> 6 <span class="glyphicon glyphicon-exclamation-sign text-danger" aria-hidden="true"></span> 1
@@ -452,12 +452,12 @@ This reproducible <a href="http://rmarkdown.rstudio.com">R Markdown</a> analysis
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRMarkdownfilestronguncommittedchanges"> <span class="glyphicon glyphicon-exclamation-sign text-danger" aria-hidden="true"></span> <strong>R Markdown file:</strong> uncommitted changes </a>
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRMarkdownfilestronguptodate"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>R Markdown file:</strong> up-to-date </a>
 </p>
 </div>
-<div id="strongRMarkdownfilestronguncommittedchanges" class="panel-collapse collapse">
+<div id="strongRMarkdownfilestronguptodate" class="panel-collapse collapse">
 <div class="panel-body">
-<p>The R Markdown file has unstaged changes. To know which version of the R Markdown file created these results, you’ll want to first commit it to the Git repo. If you’re still working on the analysis, you can ignore this warning. When you’re finished, you can run <code>wflow_publish</code> to commit the R Markdown file and build the HTML.</p>
+<p>Great! Since the R Markdown file has been committed to the Git repository, you know the exact version of the code that produced these results.</p>
 </div>
 </div>
 </div>
@@ -500,12 +500,51 @@ This reproducible <a href="http://rmarkdown.rstudio.com">R Markdown</a> analysis
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongCachestrongnone"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Cache:</strong> none </a>
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongCachestrongdetected"> <span class="glyphicon glyphicon-exclamation-sign text-danger" aria-hidden="true"></span> <strong>Cache:</strong> detected </a>
 </p>
 </div>
-<div id="strongCachestrongnone" class="panel-collapse collapse">
+<div id="strongCachestrongdetected" class="panel-collapse collapse">
 <div class="panel-body">
-<p>Nice! There were no cached chunks for this analysis, so you can be confident that you successfully produced the results during this run.</p>
+The following chunks had caches available:
+<ul>
+<li>
+session-info-chunk-inserted-by-workflowr
+</li>
+<li>
+unnamed-chunk-1
+</li>
+<li>
+unnamed-chunk-10
+</li>
+<li>
+unnamed-chunk-11
+</li>
+<li>
+unnamed-chunk-2
+</li>
+<li>
+unnamed-chunk-3
+</li>
+<li>
+unnamed-chunk-4
+</li>
+<li>
+unnamed-chunk-5
+</li>
+<li>
+unnamed-chunk-6
+</li>
+<li>
+unnamed-chunk-7
+</li>
+<li>
+unnamed-chunk-8
+</li>
+<li>
+unnamed-chunk-9
+</li>
+</ul>
+<p>To ensure reproducibility of the results, delete the cache directory <code>module-E_cache</code> and re-run the analysis. To have workflowr automatically delete the cache directory prior to building the file, set <code>delete_cache = TRUE</code> when running <code>wflow_build()</code> or <code>wflow_publish()</code>.</p>
 </div>
 </div>
 </div>
@@ -524,16 +563,16 @@ This reproducible <a href="http://rmarkdown.rstudio.com">R Markdown</a> analysis
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomdkillianbppstree68a30aa19edd5103e44df85808ad33f6ed256b8btargetblank68a30aaa"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/dkillian/bpps/tree/68a30aa19edd5103e44df85808ad33f6ed256b8b" target="_blank">68a30aa</a> </a>
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomdkillianbppstreea1c3508573d6084b6ee0b438fcf7a41ac31bc171targetblanka1c3508a"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/dkillian/bpps/tree/a1c3508573d6084b6ee0b438fcf7a41ac31bc171" target="_blank">a1c3508</a> </a>
 </p>
 </div>
-<div id="strongRepositoryversionstrongahrefhttpsgithubcomdkillianbppstree68a30aa19edd5103e44df85808ad33f6ed256b8btargetblank68a30aaa" class="panel-collapse collapse">
+<div id="strongRepositoryversionstrongahrefhttpsgithubcomdkillianbppstreea1c3508573d6084b6ee0b438fcf7a41ac31bc171targetblanka1c3508a" class="panel-collapse collapse">
 <div class="panel-body">
 <p>
 Great! You are using Git for version control. Tracking code development and connecting the code version to the results is critical for reproducibility.
 </p>
 <p>
-The results in this page were generated with repository version <a href="https://github.com/dkillian/bpps/tree/68a30aa19edd5103e44df85808ad33f6ed256b8b" target="_blank">68a30aa</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
+The results in this page were generated with repository version <a href="https://github.com/dkillian/bpps/tree/a1c3508573d6084b6ee0b438fcf7a41ac31bc171" target="_blank">a1c3508</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
 </p>
 <p>
 Note that you need to be careful to ensure that all relevant files for the analysis have been committed to Git prior to generating the results (you can use <code>wflow_publish</code> or <code>wflow_git_commit</code>). workflowr only checks the R Markdown file, but you know if there are other scripts or data files that it depends on. Below is the status of the Git repository when the results were generated:
@@ -546,16 +585,13 @@ Ignored files:
     Ignored:    analysis/frequencies_cache/
     Ignored:    analysis/module-B_cache/
     Ignored:    analysis/module-C_cache/
+    Ignored:    analysis/module-E_cache/
     Ignored:    analysis/univariate-frequencies_cache/
 
 Untracked files:
     Untracked:  code/djk workflowr commands.R
     Untracked:  temp/
     Untracked:  univariate-frequencies_cache/
-
-Unstaged changes:
-    Modified:   analysis/_site.yml
-    Modified:   analysis/module-E.Rmd
 
 </code></pre>
 <p>
@@ -594,6 +630,40 @@ Message
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+Rmd
+</td>
+<td>
+<a href="https://github.com/dkillian/bpps/blob/a1c3508573d6084b6ee0b438fcf7a41ac31bc171/analysis/module-E.Rmd" target="_blank">a1c3508</a>
+</td>
+<td>
+dkillian
+</td>
+<td>
+2020-12-18
+</td>
+<td>
+wflow_git_commit(all = T)
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/dkillian/bpps/a1c3508573d6084b6ee0b438fcf7a41ac31bc171/public/module-E.html" target="_blank">a1c3508</a>
+</td>
+<td>
+dkillian
+</td>
+<td>
+2020-12-18
+</td>
+<td>
+wflow_git_commit(all = T)
+</td>
+</tr>
 <tr>
 <td>
 html
@@ -4314,8 +4384,8 @@ trying to commit module-E
   
 </table></div>
 </div>
-<div id="e8.-the-peace-agreement-between-the-us-and-taliban-calls-for-direct-negotiations-between-the-taliban-and-the-government-of-afghanistan.-are-you-pessimistic-or-optimistic-that-the-government-of-afghanistan-and-the-taliban-will-be-able-to-negotiate-a-peace-agreement" class="section level4">
-<h4>E8. The peace agreement between the US and Taliban calls for direct negotiations between the Taliban and the Government of Afghanistan. Are you pessimistic or optimistic that the Government of Afghanistan and the Taliban will be able to negotiate a peace agreement?</h4>
+<div id="e8.-are-you-pessimistic-or-optimistic-that-the-government-of-afghanistan-and-the-taliban-will-be-able-to-negotiate-a-peace-agreement" class="section level4">
+<h4>E8. Are you pessimistic or optimistic that the Government of Afghanistan and the Taliban will be able to negotiate a peace agreement?</h4>
 <style>html {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
 }
