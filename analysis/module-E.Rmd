@@ -330,6 +330,7 @@ e5
 
 #### E6. As a result of implementation of the peace agreement between the USG and Taliban, would you say that you are pessimistic or optimistic about the future of Afghanistan?
 
+TEST TEST
 
 ```{r}
 opt <- labs$optimism
