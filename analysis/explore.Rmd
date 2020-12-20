@@ -9,7 +9,9 @@ editor_options:
 
 ## Introduction
 
-```{r}
+This section explores the survey frequencies and means disaggregated across a variety of domains. The following files explore each survey module. 
 
-```
+## Modules
+
+[Awareness of USAID](module-B-explore.html)
 
